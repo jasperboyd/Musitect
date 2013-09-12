@@ -14,6 +14,8 @@
     	<ul> 
     		<li>Lyrics</li>
     		<li>Chords</li>
+    		<li>Other Stuff</li>
+    		<li>Even more Stuff</li> 
     	</ul>
     </article>
     <section> 
