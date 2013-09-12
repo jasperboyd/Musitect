@@ -113,6 +113,7 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
+		'Cartalyst\Sentry\SentryServiceProvider'
 
 	),
 
@@ -173,6 +174,7 @@ return array(
 		'Route'           => 'Illuminate\Support\Facades\Route',
 		'Schema'          => 'Illuminate\Support\Facades\Schema',
 		'Seeder'          => 'Illuminate\Database\Seeder',
+		'Sentry' => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 		'Session'         => 'Illuminate\Support\Facades\Session',
 		'Str'             => 'Illuminate\Support\Str',
 		'URL'             => 'Illuminate\Support\Facades\URL',
