@@ -3,9 +3,12 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
+$serif: "Crimson Text"; 
+$sans: "Josefin Sans";
+
 @import "compass/reset";
 @import "header";
+ 
 
-$serif: 'Crimson Text'; 
-$sans: 'Josefin Sans'; 
+
 
