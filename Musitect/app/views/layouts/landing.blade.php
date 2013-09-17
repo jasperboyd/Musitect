@@ -12,10 +12,12 @@
     </article>
 <section> 
         <h3>Sign In</h3> 
-        <!--FORM GOES HERE--> 
+        <!--FORM GOES HERE-->
+        @yield('signin') 
 </section>
 <section>
         <h3>Register</h3>
         <!--FORM GOES HERE--> 
+         @yield('register')
 </section>
 @stop

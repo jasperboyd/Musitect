@@ -1,1 +1,11 @@
-h1 { font-family: $sans, sans-serif; font-weight: 100; }
+
+header { 
+	background: $primary; 
+	h1, h2 { color: white; }
+	width: 75%;
+	float:left;	 
+	h2 { font-family: $serif, serif; font-weight: 600; @include adjust-font-size-to($normal); display: inline-block; text-transform: lowercase;
+
+} 
+h1 {  font-weight: 100; @include adjust-font-size-to($big); display: inline-block; }
+	  letter-spacing: 2px; }

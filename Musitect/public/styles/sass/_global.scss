@@ -1,0 +1,12 @@
+h1,
+h2, 
+h3, 
+h4, 
+h5,
+h6 { font-family: $sans, sans-serif; }
+
+h3 { @include adjust-font-size-to($large);}
+p, li { font-family: $serif, serif; } 
+a:hover { color: $highlight; }
+article, section { clear: both; max-width: 1000px; margin: 0 auto; padding: 1em; } 
+li { margin-left: 2em; }

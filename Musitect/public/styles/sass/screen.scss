@@ -3,12 +3,32 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
+@import "compass/reset";
+@import "compass/typography/vertical_rhythm";
+
 $serif: "Crimson Text"; 
 $sans: "Josefin Sans";
 
-@import "compass/reset";
+$big: 59.301px; 
+$large: 36.651px; 
+$medium: 22.652px; 
+$normal: 14px; 
+$small: 8.653px; 
+
+$highlight: #f2cd05;
+$primary: #05c4f2;
+$secondary: #f20565;
+
+$base-font-size: $normal;
+
+$base-line-height: $normal + $normal/2;
+
+@include establish-baseline(14px);
+
+
 @import "header";
- 
+@import "nav";
+@import "global";
 
 
 
