@@ -11,9 +11,7 @@
     	<h2>A Songwriter's Toolkit</h2> 
     </header> 
     <nav>
-    	<a>Nav 1</a>
-    	<a>Nav 2</a>
-    	<a>Nav 3</a>
+    	<!--NAV MENU GOES HERE--> 
     </nav>
     @yield('content')
 </body>

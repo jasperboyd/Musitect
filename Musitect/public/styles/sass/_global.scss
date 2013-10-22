@@ -1,12 +1,32 @@
 h1,
-h2, 
-h3, 
+h2,  
 h4, 
 h5,
-h6 { font-family: $sans, sans-serif; }
+h6 { font-family: $sans, sans-serif; text-align: center; }
 
-h3 { @include adjust-font-size-to($large);}
-p, li { font-family: $serif, serif; } 
+h3 { @include adjust-font-size-to($medium); text-align: center; margin-bottom: .5em; text-transform: uppercase; font-weight: 600; letter-spacing: 2px; font-style: italic;}
+
+input, label, p, li, h3 { font-family: $serif, serif; } 
+
+p, li { 
+	@include adjust-font-size-to($medium);
+} 
+
 a:hover { color: $highlight; }
-article, section { clear: both; max-width: 1000px; margin: 0 auto; padding: 1em; } 
-li { margin-left: 2em; }
+
+article { 
+	width: 40%; 
+	margin: 0 5%; 
+	float: left; 
+} 
+
+label, input {
+	display: block; 
+	margin: 1em 10%;
+	width: 80%; 
+	height: 40px; 
+	@include adjust-font-size-to($medium);
+}
+
+
+label, li { text-align: center; }

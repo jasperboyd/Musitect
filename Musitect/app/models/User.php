@@ -3,8 +3,9 @@
 use Eloquent;
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
+use LaravelBook\Ardent\Ardent;
 
-class User extends \Cartalyst\Sentry\Users\Eloquent\User implements UserInterface, RemindableInterface {
+class User extends Ardent implements UserInterface, RemindableInterface {
 
 /**
 * The database table used by the model.
@@ -19,6 +20,33 @@ protected $table = 'users';
 * @var array
 */
 protected $hidden = array('password');
+
+/**
+*	Don't save the confirmed password
+*
+*/ 
+
+public $autoPurgeRedundantAttributes = true;
+
+/**
+ * Ardent validation rules
+ */
+public static $rules = array(
+  'name' => 'required|between:4,16',
+  'email' => 'required|email',
+  'password' => 'required|alpha_num|min:8|confirmed',
+  'password_confirmation' => 'required|alpha_num|between:4,8',
+);
+
+/**
+* Prevents users from changing their ID etc. 
+*
+*/ 
+
+protected $fillable = array('username', 'email');
+
+protected $guarded = array('id', 'password');
+
 
 /**
 * Get the unique identifier for the user.
@@ -49,5 +77,14 @@ public function getReminderEmail()
 {
 return $this->email;
 }
+
+/**
+* Method relationship with songs
+*
+*/ 
+public function songs()
+{ 
+	return $this->hasmany('Song'); 
+} 
 
 }

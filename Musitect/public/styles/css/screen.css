@@ -81,29 +81,29 @@ html {
 /* line 2, ../sass/_header.scss */
 header {
   background: #05c4f2;
-  width: 75%;
-  float: left;
-  letter-spacing: 2px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1em 0;
 }
 /* line 4, ../sass/_header.scss */
 header h1, header h2 {
   color: white;
+  text-align: center;
 }
-/* line 7, ../sass/_header.scss */
+/* line 8, ../sass/_header.scss */
 header h2 {
   font-family: "Crimson Text", serif;
   font-weight: 600;
   font-size: 1em;
   line-height: 1.5em;
-  display: inline-block;
   text-transform: lowercase;
 }
-/* line 10, ../sass/_header.scss */
+/* line 9, ../sass/_header.scss */
 header h1 {
   font-weight: 100;
-  font-size: 4.23579em;
-  line-height: 1.4165em;
-  display: inline-block;
+  font-size: 2.61793em;
+  line-height: 1.14594em;
+  letter-spacing: 1px;
 }
 
 /* line 1, ../sass/_nav.scss */
@@ -124,41 +124,75 @@ nav a {
   line-height: 1.85414em;
 }
 
-/* line 6, ../sass/_global.scss */
+/* line 1, ../sass/_aside.scss */
+aside {
+  width: 20%;
+  padding: 0 2.5%;
+  height: 100%;
+  float: right;
+  background: #f20565;
+}
+/* line 7, ../sass/_aside.scss */
+aside label, aside h1, aside h2, aside h3, aside h4, aside h5, aside h6 {
+  color: white;
+}
+
+/* line 5, ../sass/_global.scss */
 h1,
 h2,
-h3,
 h4,
 h5,
 h6 {
   font-family: "Josefin Sans", sans-serif;
+  text-align: center;
 }
 
-/* line 8, ../sass/_global.scss */
+/* line 7, ../sass/_global.scss */
 h3 {
-  font-size: 2.61793em;
-  line-height: 1.14594em;
+  font-size: 1.618em;
+  line-height: 1.85414em;
+  text-align: center;
+  margin-bottom: .5em;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  font-style: italic;
 }
 
 /* line 9, ../sass/_global.scss */
-p, li {
+input, label, p, li, h3 {
   font-family: "Crimson Text", serif;
 }
 
-/* line 10, ../sass/_global.scss */
+/* line 11, ../sass/_global.scss */
+p, li {
+  font-size: 1.618em;
+  line-height: 1.85414em;
+}
+
+/* line 15, ../sass/_global.scss */
 a:hover {
   color: #f2cd05;
 }
 
-/* line 11, ../sass/_global.scss */
-article, section {
-  clear: both;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 1em;
+/* line 17, ../sass/_global.scss */
+article {
+  width: 40%;
+  margin: 0 5%;
+  float: left;
 }
 
-/* line 12, ../sass/_global.scss */
-li {
-  margin-left: 2em;
+/* line 23, ../sass/_global.scss */
+label, input {
+  display: block;
+  margin: 1em 10%;
+  width: 80%;
+  height: 40px;
+  font-size: 1.618em;
+  line-height: 1.85414em;
+}
+
+/* line 32, ../sass/_global.scss */
+label, li {
+  text-align: center;
 }

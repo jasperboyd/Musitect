@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver' => 'mysql',
 			'host' => 'localhost',
-			'database' => 'Musitect',
+			'database' => 'musitect',
 			'unix_socket' => '/Applications/MAMP/tmp/mysql/mysql.sock',
 			'username' => 'root',
 			'password' => 'root',
