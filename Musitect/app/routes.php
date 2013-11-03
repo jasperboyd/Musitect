@@ -26,3 +26,5 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function()
     Route::resource('articles',    'App\Controllers\Admin\ArticlesController');
     Route::resource('pages',       'App\Controllers\Admin\PagesController');
 });
+
+Route::resource('user', 'UserController');

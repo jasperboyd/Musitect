@@ -1,155 +1,86 @@
 <?php
 
-use Illuminate\Support\MessageBag;
+use Musitect\Storage\User\UserRepository as User;
 
-class UserController
-extends Controller
-{
-    public function loginAction()
-    {
-        $errors = new MessageBag();
+class UsersController extends \BaseController {
 
-        if ($old = Input::old("errors"))
-        {
-            $errors = $old;
-        }
+	/**
+ 	* Display a listing of the resource.
+ 	*
+	 * @return Response
+	 */
+	public function index()
+	{
+  		return $this->user->all();
+	}
+	
+	public function __construct(User $user)
+	{
+  		$this->user = $user;
+	}
 
-        $data = [
-            "errors" => $errors
-        ];
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return Response
+	 */
+	public function create()
+	{
+		//
+	}
 
-        if (Input::server("REQUEST_METHOD") == "POST")
-        {
-            $validator = Validator::make(Input::all(), [
-                "username" => "required",
-                "password" => "required"
-            ]);
+	/**
+	 * Store a newly created resource in storage.
+	 *
+	 * @return Response
+	 */
+	public function store()
+	{
+		//
+	}
 
-            if ($validator->passes())
-            {
-                $credentials = [
-                    "username" => Input::get("username"),
-                    "password" => Input::get("password")
-                ];
+	/**
+	 * Display the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function show($id)
+	{
+		//
+	}
 
-                if (Auth::attempt($credentials))
-                {
-                    return Redirect::route("user/profile");
-                }
-            }
-            
-            $data["errors"] = new MessageBag([
-                "password" => [
-                    "Username and/or password invalid."
-                ]
-            ]);
+	/**
+	 * Show the form for editing the specified resource.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function edit($id)
+	{
+		//
+	}
 
-            $data["username"] = Input::get("username");
+	/**
+	 * Update the specified resource in storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function update($id)
+	{
+		//
+	}
 
-            return Redirect::route("user/login")
-                ->withInput($data);
-        }
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function destroy($id)
+	{
+		//
+	}
 
-        return View::make("user/login", $data);
-    }
-
-    public function requestAction()
-    {
-        $data = [
-            "requested" => Input::old("requested")
-        ];
-
-        if (Input::server("REQUEST_METHOD") == "POST")
-        {
-            $validator = Validator::make(Input::all(), [
-                "email" => "required"
-            ]);
-
-            if ($validator->passes())
-            {
-                $credentials = [
-                    "email" => Input::get("email")
-                ];
-
-                Password::remind($credentials,
-                    function($message, $user)
-                    {
-                        $message->from("chris@example.com");
-                    }
-                );
-
-                $data["requested"] = true;
-
-                return Redirect::route("user/request")
-                    ->withInput($data);
-            }
-        }
-
-        return View::make("user/request", $data);
-    }
-
-    public function resetAction()
-    {
-        $token = "?token=" . Input::get("token");
-
-        $errors = new MessageBag();
-
-        if ($old = Input::old("errors"))
-        {
-            $errors = $old;
-        }
-
-        $data = [
-            "token"  => $token,
-            "errors" => $errors
-        ];
-
-        if (Input::server("REQUEST_METHOD") == "POST")
-        {
-            $validator = Validator::make(Input::all(), [
-                "email"                 => "required|email",
-                "password"              => "required|min:6",
-                "password_confirmation" => "required|same:password",
-                "token"                 => "required|exists:token,token"
-            ]);
-
-            if ($validator->passes())
-            {
-                $credentials = [
-                    "email" => Input::get("email")
-                ];
-
-                Password::reset($credentials,
-                    function($user, $password)
-                    {
-                        $user->password = Hash::make($password);
-                        $user->save();
-
-                        Auth::login($user);        
-
-                        return Redirect::route("user/profile");
-                    }
-                );
-            }
-
-            $data["email"]  = Input::get("email");
-            $data["errors"] = $validator->errors();
-
-            return Redirect::to(URL::route("user/reset") . $token)
-                ->withInput($data);
-        }
-
-        return View::make("user/reset", $data);
-    }
-
-    public function profileAction()
-    {
-        return View::make("user/profile");
-    }
-
-    public function logoutAction()
-    {
-        Auth::logout();
-        return Redirect::route("user/login");
-    }
 }
