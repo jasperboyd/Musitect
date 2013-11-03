@@ -39,6 +39,16 @@ public static $rules = array(
 );
 
 /**
+ * Factory
+ */
+public static $factory = array(
+  'username' => 'string',
+  'email' => 'email',
+  'password' => 'password',
+  'password_confirmation' => 'password'
+);
+
+/**
 * Prevents users from changing their ID etc. 
 *
 */ 
