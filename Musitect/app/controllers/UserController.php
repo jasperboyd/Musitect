@@ -26,7 +26,7 @@ class UsersController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		 return View::make('users.create');
 	}
 
 	/**
@@ -36,7 +36,17 @@ class UsersController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		 $s = $this->user->create(Input::all());
+ 
+  		if($s->isSaved())
+  		{
+    			return Redirect::route('users.index')
+      			->with('flash', 'The new user has been created');
+  		}
+ 
+  		return Redirect::route('users.create')
+    			->withInput()
+    			->withErrors($s->errors());
 	}
 
 	/**
@@ -47,19 +57,7 @@ class UsersController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		 $v = new Musitect\Services\Validators\User;
- 
-  		 if($v->passes())
-  	{
-    	$this->user->create($input);
- 
-   		return Redirect::route('users.index')
- 	   ->with('flash', 'The new user has been created');
-    }
- 
-  	   return Redirect::route('users.create')
-   	 	 ->withInput()
-   		 ->withErrors($v->getErrors());
+		return $this->user->find($id);
 	}
 
 	/**
@@ -70,7 +68,7 @@ class UsersController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		return View::make('users.edit');
 	}
 
 	/**
@@ -81,8 +79,18 @@ class UsersController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
-	}
+		$s = $this->user->update($id);
+ 
+  		if($s->isSaved())
+ 		{
+   				 return Redirect::route('users.show', $id)
+      			 ->with('flash', 'The user was updated');
+  		}
+ 
+  		return Redirect::route('users.edit', $id)
+    			 ->withInput()
+    			 ->withErrors($s->errors());
+		}
 
 	/**
 	 * Remove the specified resource from storage.
@@ -92,7 +100,7 @@ class UsersController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		return $this->user->delete($id);
 	}
 
 }
