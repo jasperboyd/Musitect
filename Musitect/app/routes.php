@@ -11,6 +11,9 @@
 |
 */
 
+/**
+* Admin
+*/
 Route::get('admin/logout',  array('as' => 'admin.logout',      'uses' => 'App\Controllers\Admin\AuthController@getLogout'));
 Route::get('admin/login',   array('as' => 'admin.login',       'uses' => 'App\Controllers\Admin\AuthController@getLogin'));
 Route::post('admin/login',  array('as' => 'admin.login.post',  'uses' => 'App\Controllers\Admin\AuthController@postLogin'));
@@ -22,11 +25,102 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function()
     Route::resource('pages',       'App\Controllers\Admin\PagesController');
 });
 
+/**
+* Home 
+*/
+
 Route::get('/', 'HomeController@Welcome');
+
+/**
+* User 
+*/
 
 Route::resource('user', 'UserController');
 
-Route::post('user/store', function()
-{
-  return User::create(Input::all());
-});
+/**
+* Login
+*/
+Route::get('login', array(
+  'uses' => 'SessionController@create',
+  'as' => 'session.create'
+));
+Route::post('login', array(
+  'uses' => 'SessionController@store',
+  'as' => 'session.store'
+));
+Route::get('logout', array(
+  'uses' => 'SessionController@destroy',
+  'as' => 'session.destroy'
+));
+
+/**
+* Register
+*/
+
+Route::get('register', array(
+  'uses' => 'RegisterController@index',
+  'as' => 'register.index'
+));
+Route::post('register', array(
+  'uses' => 'RegisterController@store',
+  'as' => 'register.store'
+));
+
+/**
+* Password Reset
+*/
+
+Route::get('password/reset', array(
+  'uses' => 'PasswordController@remind',
+  'as' => 'password.remind'
+));
+Route::post('password/reset', array(
+  'uses' => 'PasswordController@request',
+  'as' => 'password.request'
+));
+Route::get('password/reset/{token}', array(
+  'uses' => 'PasswordController@reset',
+  'as' => 'password.reset'
+));
+Route::post('password/reset/{token}', array(
+  'uses' => 'PasswordController@update',
+  'as' => 'password.update'
+));
+
+/**
+* Songs
+*/
+
+Route::get('Song', array(
+  'uses' => 'SongController@index',
+  'as' => 'Song.index'
+));
+Route::get('Song/create', array(
+  'before' => 'auth',
+  'uses' => 'SongController@create',
+  'as' => 'Song.create'
+));
+Route::get('Song/{id}', array(
+  'uses' => 'SongController@show',
+  'as' => 'Song.show'
+));
+Route::Song('Song', array(
+  'before' => 'auth',
+  'uses' => 'SongController@store',
+  'as' => 'Song.store'
+));
+Route::get('Song/{id}/edit', array(
+  'before' => 'auth',
+  'uses' => 'SongController@edit',
+  'as' => 'Song.edit'
+));
+Route::put('Song/{id}', array(
+  'before' => 'auth',
+  'uses' => 'SongController@update',
+  'as' => 'Song.update'
+));
+Route::delete('Song/{id}', array(
+  'before' => 'auth',
+  'uses' => 'SongController@destroy',
+  'as' => 'Song.destory'
+));
