@@ -47,7 +47,19 @@ class UsersController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		 $v = new Musitect\Services\Validators\User;
+ 
+  		 if($v->passes())
+  	{
+    	$this->user->create($input);
+ 
+   		return Redirect::route('users.index')
+ 	   ->with('flash', 'The new user has been created');
+    }
+ 
+  	   return Redirect::route('users.create')
+   	 	 ->withInput()
+   		 ->withErrors($v->getErrors());
 	}
 
 	/**
