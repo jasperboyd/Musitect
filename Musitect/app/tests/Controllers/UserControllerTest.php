@@ -6,7 +6,7 @@ public function setUp()
 {
   parent::setUp();
  
-  $this->mock = $this->mock('Cribbb\Storage\User\UserRepository');
+  $this->mock = $this->mock('Musitect\Storage\User\UserRepository');
 }
   
 public function mock($class)
@@ -25,6 +25,11 @@ public function testIndex()
   $this->call('GET', 'user');
  
   $this->assertResponseOk();
+}
+
+public function tearDown()
+{
+  Mockery::close();
 }
  
 }
