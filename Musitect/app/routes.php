@@ -11,11 +11,6 @@
 |
 */
 
-Route::get('/', function()
-{
-    return View::make('layouts.landing');
-});
-
 Route::get('admin/logout',  array('as' => 'admin.logout',      'uses' => 'App\Controllers\Admin\AuthController@getLogout'));
 Route::get('admin/login',   array('as' => 'admin.login',       'uses' => 'App\Controllers\Admin\AuthController@getLogin'));
 Route::post('admin/login',  array('as' => 'admin.login.post',  'uses' => 'App\Controllers\Admin\AuthController@postLogin'));
@@ -27,4 +22,11 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function()
     Route::resource('pages',       'App\Controllers\Admin\PagesController');
 });
 
+Route::get('/', 'HomeController@Welcome');
+
 Route::resource('user', 'UserController');
+
+Route::post('user/store', function()
+{
+  return User::create(Input::all());
+});
