@@ -7,8 +7,13 @@ class Chord extends Word {
 
 	public static $rules = array();
 	
-	public function Word (){ 
+	public function word (){ 
 		this->belongsTo('Word');
 	} 
+	
+	public function keys()
+    {
+        return $this->belongsToMany('Key');
+    }
 	
 } 

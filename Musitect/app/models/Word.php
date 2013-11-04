@@ -6,7 +6,12 @@ class Word extends Phrase {
 
 	public static $rules = array();
 	
-	public function Phrase (){ 
+	public function phrase(){ 
 		this->belongsTo('Phrase');
 	} 
+	
+	public function chord()
+    {
+        return $this->hasOne('Chord');
+    }
 }

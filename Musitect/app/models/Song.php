@@ -29,10 +29,10 @@ class Song extends Eloquent {
     return $this->belongsTo('User, user_id');
   }
   
-  //public function chords()
-  //{
-  //	return $this->hasMany('Chord');
-  //} 
+  public function phrases()
+  {
+  	return $this->hasMany('Phrase');
+  } 
   
   /**
      * Get formatted post date
