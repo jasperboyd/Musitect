@@ -104,7 +104,7 @@ Route::get('Song/{id}', array(
   'uses' => 'SongController@show',
   'as' => 'Song.show'
 ));
-Route::Song('Song', array(
+Route::post('Song', array(
   'before' => 'auth',
   'uses' => 'SongController@store',
   'as' => 'Song.store'
