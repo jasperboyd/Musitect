@@ -11,7 +11,7 @@
     	<h2>A Songwriter's Toolkit</h2> 
     </header> 
     <nav>
-    	<!--NAV MENU GOES HERE--> 
+    	<!--nav not Until Login--> 
     </nav>
     @yield('content')
 </body>
