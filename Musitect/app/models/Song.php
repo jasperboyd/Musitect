@@ -7,9 +7,6 @@ class Song extends Eloquent {
 
   protected $fillable = array('body');
   
-   /**
-     * Ardent validation rules
-     */
     public static $rules = array(
         'title' => 'required',              // Post tittle
         'slug' => 'required|alpha_dash',    // Post Url

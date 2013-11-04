@@ -3,7 +3,6 @@
 use Eloquent;
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
-use LaravelBook\Ardent\Ardent;
 
 class User extends Ardent implements UserInterface, RemindableInterface {
 
@@ -28,9 +27,7 @@ protected $hidden = array('password');
 
 public $autoPurgeRedundantAttributes = true;
 
-/**
- * Ardent validation rules
- */
+
 public static $rules = array(
   'name' => 'required|between:4,16',
   'email' => 'required|email',
@@ -38,9 +35,6 @@ public static $rules = array(
   'password_confirmation' => 'required|alpha_num|between:4,8',
 );
 
-/**
- * Factory
- */
 public static $factory = array(
   'username' => 'string',
   'email' => 'email',

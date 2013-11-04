@@ -1,12 +1,14 @@
 <?php 
-
 use Eloquent;
-use LaravelBook\Ardent\Ardent; 
 
-class Chord extends Song { 
+class Chord extends Word { 
+
+	protected $guarded = array();
+
+	public static $rules = array();
 	
-	public function song { 
-		this->belongsTo('Song');
+	public function Word (){ 
+		this->belongsTo('Word');
 	} 
 	
 } 
