@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder {
 		// $this->call('UserTableSeeder');
 		$this->call('SentrySeeder');
         $this->command->info('Sentry tables seeded!');
+		$this->call('UserTableSeederTableSeeder');
 	}
 
 }

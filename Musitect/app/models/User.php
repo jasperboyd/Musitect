@@ -4,7 +4,7 @@ use Eloquent;
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class User extends Ardent implements UserInterface, RemindableInterface {
+class User extends Eloquent implements UserInterface, RemindableInterface {
 
 /**
 * The database table used by the model.
@@ -51,6 +51,17 @@ protected $fillable = array('username', 'email');
 
 protected $guarded = array('id', 'password');
 
+/**
+* Get the unique identifier for the password.
+*
+* @return mixed
+*/
+
+public function setPasswordAttribute ($value) {
+	
+	$this->attributes['password'] = Hash::make($value); 
+
+}
 
 /**
 * Get the unique identifier for the user.

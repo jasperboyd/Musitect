@@ -1,16 +1,27 @@
+@extends('layouts.master'); 
+
+@section('content');
+
 <article> 
-		<h3>What Is It?</h3> 
+		<h1>Welcome</h1>
 		<p>
 			Musitect is a songwriting tool that gives users the ability to 
 			composer chords and lyrics in a comfortable way, putting the 
 			focus on the musical choices that need to be made and eliminating 
 			the difficulty in hearing / recording those changes. 
 		</p> 
-    	<h3>What Do You Get?</h3> 
+		<h1>Features</h1> 
     	<ul> 
-    		<li>Lyrics</li>
-    		<li>Chords</li>
-    		<li>Other Stuff</li>
-    		<li>Even more Stuff</li> 
+    		<li>Squat</li>
     	</ul>
 </article>
+
+<section> 
+	<h1>Register</h1>
+	@include('forms.register');
+</section> 
+
+<section> 
+	<h1>Login</h1>
+	@include('forms.login');
+</section> 

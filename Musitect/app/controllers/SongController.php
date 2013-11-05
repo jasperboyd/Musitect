@@ -24,7 +24,8 @@ class SongController extends BaseController {
 */
   public function index()
   {
-    return $this->Song->all();
+    $songs = Song::with('user')->get();   
+    return view::make('Songs.index', compact('songs'));
   }
 
   /**

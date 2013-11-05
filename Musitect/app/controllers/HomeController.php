@@ -15,15 +15,5 @@ class HomeController extends BaseController {
 	{
 		return View::make('welcome');
 	}
-	
-	public function Register() 
-	{ 
-		return View::make('register'); 
-	} 
-	
-	public function Login()
-	{ 
-		return View::make('login');
-	} 
 
 }

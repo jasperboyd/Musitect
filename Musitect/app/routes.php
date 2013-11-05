@@ -29,7 +29,10 @@ Route::group(array('prefix' => 'admin', 'before' => 'auth.admin'), function()
 * Home 
 */
 
-Route::get('/', 'HomeController@Welcome');
+Route::get('/', array(
+  'uses' => 'HomeController@Welcome',
+  'as' => 'home.welcome'
+));
 
 /**
 * User 

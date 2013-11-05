@@ -23,6 +23,9 @@
 			"app/database/seeds",
 			"app/tests/TestCase.php",
 			"app/lib"
+		],
+		"files": [
+			"app/helpers.php"
 		]
 	},
 	"scripts": {

@@ -1,13 +1,4 @@
-@extends('layouts.master')
-
-@section('content')
-  @if($errors->any())
-    <ul>
-      {{ implode('', $errors->all('<li>:message</li>'))}}
-    </ul>
-  @endif
-
-  {{ Form::open(array('route' => 'register.store')) }}
+{{ Form::open(array('route' => 'register.store')) }}
 
     <p>{{ Form::label('username', 'Username') }}
     {{ Form::text('username') }}</p>
@@ -23,5 +14,4 @@
 
     <p>{{ Form::submit('Submit') }}</p>
 
-  {{ Form::close() }}
-@stop
+{{ Form::close() }}
