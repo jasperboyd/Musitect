@@ -1,6 +1,6 @@
-@extends('layouts.master'); 
+@extends('layouts.master')
 
-@section('content');
+@section('content')
 
 <article> 
 		<h1>Welcome</h1>
@@ -18,10 +18,12 @@
 
 <section> 
 	<h1>Register</h1>
-	@include('forms.register');
+	@include('forms.register')
 </section> 
 
 <section> 
 	<h1>Login</h1>
-	@include('forms.login');
+	@include('forms.login')
 </section> 
+
+@stop

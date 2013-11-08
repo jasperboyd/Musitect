@@ -11,7 +11,16 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+/**
+* Home 
+*/
+
+Route::get('/', array(
+  'uses' => 'HomeController@Welcome',
+  'as' => 'home.welcome'
+));
+
+Route::post('register', array(
+  'uses' => 'RegisterController@store',
+  'as' => 'register.store'
+));
