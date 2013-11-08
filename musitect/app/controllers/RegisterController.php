@@ -1,7 +1,5 @@
 <?php
 
-use Musitect\Storage\User\UserRepository as User;
-
 class RegisterController extends BaseController {
 
   /**
