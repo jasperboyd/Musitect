@@ -1,5 +1,4 @@
 <?php 
-use Eloquent;
 
 class Chord extends Word { 
 

@@ -1,5 +1,7 @@
 <?php
 
+use Jenssegers\Mongodb\Model as Eloquent;
+
 class Phrase extends Song {
 	protected $guarded = array();
 

@@ -1,5 +1,7 @@
 <?php
 
+use Jenssegers\Mongodb\Model as Eloquent;
+
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
@@ -55,6 +57,6 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	}
 
 	public function libraries(){
-		return $this->hasMany('libraries');
+		return $this->hasMany('libraries');;
 	}
 }

@@ -30,12 +30,22 @@ Route::get('songs', array(
 	'as' => 'songs.index'
 ));
 
-Route::get('{username}', array(
-	'uses' => 'UsersController@show', 
-	'as' => 'user.show' 
+Route::get('{username}', array (
+	'users' => 'UserController@show', 
+	'as' => 'user.show'
 ));
 
 Route::get('{username}/library', array(
 	'uses' => 'LibraryController@index', 
-	'as' => 'user.show' 
+	'as' => 'library.index' 
+));
+
+Route::get('{username}/libraries', array(
+	'uses' => 'LibraryController@index', 
+	'as' => 'library.index' 
+));
+
+Route::get('{username}/{library}', array(
+	'uses' => 'LibraryController@show', 
+	'as' => 'library.show' 
 ));

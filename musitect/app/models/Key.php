@@ -1,5 +1,7 @@
 <?php
 
+use Jenssegers\Mongodb\Model as Eloquent;
+
 class Key extends Eloquent {
 	protected $guarded = array();
 

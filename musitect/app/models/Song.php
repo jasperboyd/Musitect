@@ -1,7 +1,6 @@
 <?php
 
-use Eloquent;
-use LaravelBook\Ardent\Ardent;
+use Jenssegers\Mongodb\Model as Eloquent;
 
 class Song extends Eloquent {
 

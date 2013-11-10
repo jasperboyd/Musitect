@@ -7,9 +7,11 @@ class LibraryController extends BaseController {
 	 *
 	 * @return Response
 	 */
-	public function index()
+	public function index($username)
 	{
-        return View::make('userlibraries.index');
+		$library = User::whereUsername($username)->first()->library;
+
+        return View::make('userlibraries.index', compact('library'));
 	}
 
 	/**
@@ -76,4 +78,7 @@ class LibraryController extends BaseController {
 		//
 	}
 
+	public function songs(){
+		return $this->hasMany('song');
+	}
 }

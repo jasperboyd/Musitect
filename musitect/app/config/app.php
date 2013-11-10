@@ -114,7 +114,9 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		/*Jeffery Way's Generators*/
-		'Way\Generators\GeneratorsServiceProvider'
+		'Way\Generators\GeneratorsServiceProvider',
+		/*Mongodb package*/
+		'Jenssegers\Mongodb\MongodbServiceProvider'
 
 	),
 

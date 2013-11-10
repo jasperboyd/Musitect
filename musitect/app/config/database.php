@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'default' => 'sqlite',
+	'default' => 'mongodb',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -81,6 +81,16 @@ return array(
 			'username' => 'root',
 			'password' => '',
 			'prefix'   => '',
+		),
+
+		'mongodb' => array(
+
+			'driver'   => 'mongodb',
+    		'host'     => 'localhost',
+    		'port'     => 27017,
+    		'username' => 'jasper',
+    		'password' => 'paperflowers',
+    		'database' => 'musitect'
 		),
 
 	),
