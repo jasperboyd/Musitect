@@ -1,7 +1,5 @@
 <?php
 
-use Musitect\Storage\Song\SongRepository as Song;
-
 class SongController extends BaseController {
 
   /**
@@ -68,7 +66,7 @@ class SongController extends BaseController {
 */
   public function show($id)
   {
-    $Song $this->Song->find($id);
+    $Song = $this->Song->find($id);
 
     return View::make('Songs.show', compact('Song'));
   }

@@ -24,9 +24,9 @@ class Song extends Eloquent {
         'user_id' => 'factory|User', // Will be the id of an existent User.
     );
 
-  public function user()
+  public function library()
   {
-    return $this->belongsTo('User');
+    return $this->belongsTo('Library')
   }
   
   public function phrases()

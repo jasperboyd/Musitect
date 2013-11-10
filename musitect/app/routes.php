@@ -35,10 +35,7 @@ Route::get('{username}', array(
 	'as' => 'user.show' 
 ));
 
-Route::get('{username}/songs/{title}'){
-	//finder user
-	$user = User::whereUsername($username)->first();
-	$song = User->songs->findOrFail($title); 
-	//return user's songs
-	return $user->songs; 
-});
+Route::get('{username}/library', array(
+	'uses' => 'LibraryController@index', 
+	'as' => 'user.show' 
+));
