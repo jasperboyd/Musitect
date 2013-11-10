@@ -1,6 +1,9 @@
 <?php 
 
+use Mockery;
+
 class UserTest extends TestCase {
+
 	
 	public function testThatTrueIsTrue()
 	{
