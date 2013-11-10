@@ -1,6 +1,6 @@
 <?php
 
-use Jenssegers\Mongodb\Model as Eloquent;
+use Eloquent;
 
 class Library extends User {
 	protected $guarded = array();

@@ -116,7 +116,7 @@ return array(
 		/*Jeffery Way's Generators*/
 		'Way\Generators\GeneratorsServiceProvider',
 		/*Mongodb package*/
-		'Jenssegers\Mongodb\MongodbServiceProvider'
+		'LMongo\LMongoServiceProvider'
 
 	),
 
@@ -182,7 +182,6 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
-
 	),
 
 );

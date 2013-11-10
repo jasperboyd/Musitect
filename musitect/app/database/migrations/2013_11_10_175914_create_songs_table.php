@@ -12,12 +12,10 @@ class CreateSongsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('songs', function(Blueprint $table) {
-			$table->increments('id');
-			$table->string('title');
-			$table->text('lyrics');
-			$table->integer('user_id');
-			$table->timestamps();
+		Schema::create('users', function($collection)
+		{
+   			 $collection->index('name');
+   			 $collection->unique('email');
 		});
 	}
 

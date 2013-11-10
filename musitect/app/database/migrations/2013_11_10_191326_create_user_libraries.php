@@ -12,10 +12,10 @@ class CreateUserLibraries extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('user_libraries', function(Blueprint $table) {
-			$table->increments('id');
-			
-			$table->timestamps();
+		Schema::create('users', function($collection)
+		{
+    		$collection->index('name');
+    		$collection->unique('email');
 		});
 	}
 
