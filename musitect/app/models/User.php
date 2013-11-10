@@ -1,6 +1,6 @@
 <?php
 
-use Jenssegers\Mongodb\Model as Eloquent;
+use Eloquent;
 
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
