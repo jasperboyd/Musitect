@@ -114,7 +114,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		/*Jeffery Way's Generators*/
-		'Way\Generators\GeneratorsServiceProvider',a
+		'Way\Generators\GeneratorsServiceProvider',
 	),
 
 	/*
