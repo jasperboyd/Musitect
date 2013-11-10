@@ -57,7 +57,9 @@ class UsersController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		return $this->user->find($id);
+		$this->user->findOrFail($id);
+
+		return View::make('users.show'); 
 	}
 
 	/**

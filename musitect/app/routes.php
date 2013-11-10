@@ -24,3 +24,21 @@ Route::post('register', array(
   'uses' => 'RegisterController@store',
   'as' => 'register.store'
 ));
+
+Route::get('songs', array(
+	'uses' => 'SongsController@index',
+	'as' => 'songs.index'
+));
+
+Route::get('{username}', array(
+	'uses' => 'UsersController@show', 
+	'as' => 'user.show' 
+));
+
+Route::get('{username}/songs/{title}'){
+	//finder user
+	$user = User::whereUsername($username)->first();
+	$song = User->songs->findOrFail($title); 
+	//return user's songs
+	return $user->songs; 
+});

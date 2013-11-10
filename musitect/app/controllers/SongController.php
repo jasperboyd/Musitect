@@ -24,7 +24,9 @@ class SongController extends BaseController {
 */
   public function index()
   {
+    //Fetch all songs
     $songs = Song::with('user')->get();   
+    //Return them
     return view::make('Songs.index', compact('songs'));
   }
 
@@ -66,7 +68,9 @@ class SongController extends BaseController {
 */
   public function show($id)
   {
-    return $this->Song->find($id);
+    $Song $this->Song->find($id);
+
+    return View::make('Songs.show', compact('Song'));
   }
 
   /**
