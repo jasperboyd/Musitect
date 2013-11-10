@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class AddUsernameToUsersTable extends Migration {
+class CreateUserLibraries extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,10 +12,13 @@ class AddUsernameToUsersTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('users', function(Blueprint $table) {
-			$table->string('username');
+		Schema::create('user_libraries', function(Blueprint $table) {
+			$table->increments('id');
+			
+			$table->timestamps();
 		});
 	}
+
 
 	/**
 	 * Reverse the migrations.
@@ -24,9 +27,7 @@ class AddUsernameToUsersTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('users', function(Blueprint $table) {
-			$table->dropColumn('username');
-		});
+		Schema::drop('user_libraries');
 	}
 
 }
