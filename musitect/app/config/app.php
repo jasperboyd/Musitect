@@ -115,6 +115,8 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		/*Jeffery Way's Generators*/
 		'Way\Generators\GeneratorsServiceProvider',
+		/*Behat-Laravel Plugin*/
+		'GuilhermeGuitte\BehatLaravel\BehatLaravelServiceProvider',
 	),
 
 	/*
