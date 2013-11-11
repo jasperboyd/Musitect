@@ -3,12 +3,11 @@
 use Eloquent;
 
 class Phrase extends Song {
-	protected $guarded = array();
-
-	public static $rules = array();
 	
-	public function phrases()
+	protected $guarded = array('line', 'id');
+	
+	public function words()
     {
-        return $this->hasMany('Phrase');
+        return $this->hasMany('Word');
     }
 }

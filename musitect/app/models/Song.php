@@ -4,24 +4,9 @@ use Eloquent;
 
 class Song extends Eloquent {
 
-  protected $fillable = array('body');
+  protected $fillable = array('title');
   
-    public static $rules = array(
-        'title' => 'required',              // Post tittle
-        'slug' => 'required|alpha_dash',    // Post Url
-        'content' => 'required',            // Post content (Markdown)
-        'user_id' => 'required|numeric',  // Author id
-    );
-    
-    /**
-     * Array used by FactoryMuff to create Test objects
-     */
-    public static $factory = array(
-        'title' => 'string',
-        'slug' => 'string',
-        'content' => 'text',
-        'user_id' => 'factory|User', // Will be the id of an existent User.
-    );
+  protected $guarded = array('id'); 
 
   public function library()
   {

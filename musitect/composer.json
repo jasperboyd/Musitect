@@ -17,9 +17,13 @@
 		]
 	},
     "require-dev": {
-         "guilhermeguitte/behat-laravel": "dev-master",
-         "way/generators": "dev-master",
-         "mockery/mockery": "dev-master"    
+        "behat/behat": "2.4.*@stable",
+        "way/generators": "dev-master",
+        "mockery/mockery": "dev-master",
+        "behat/mink": "1.4.*@stable",
+        "behat/mink-extension": "*",
+        "behat/mink-goutte-driver": "*",
+        "behat/mink-selenium2-driver": "*"    
     },
 	"scripts": {
 		"post-install-cmd": [

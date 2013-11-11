@@ -1,14 +1,15 @@
+# behat.yml
 default:
     formatter:
-            name:                       pretty
-            parameters:
-                decorated:              true
-                verbose:                false
-                time:                   true
-                language:               en
-                output_path:            null
-                multiline_arguments:    true
-    paths:
-        features: app/tests/acceptance
-        bootstrap: app/tests/acceptance/contexts
-
+        name:                       pretty
+        parameters:
+            decorated:              true
+            verbose:                false
+            time:                   true
+            language:               en
+            output_path:            null
+            multiline_arguments:    true
+extensions:
+        Vendor\Bin\Behat\MinkExtension\Extension:
+            goutte: ~
+            selenium2: ~

@@ -2,9 +2,7 @@
 
 class Word extends Phrase {
 	
-	protected $guarded = array();
-
-	public static $rules = array();
+	protected $guarded = array('id');
 	
 	public function phrase(){ 
 		this->belongsTo('Phrase');
