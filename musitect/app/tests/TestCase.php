@@ -1,5 +1,7 @@
 <?php
 
+require_once 'vendor/phpunit/phpunit/framework/assert';
+
 class TestCase extends Illuminate\Foundation\Testing\TestCase {
 
 	/**

@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"fun",
+				"function"
+			],
+			[
+				"dev",
+				"dev-master"
+			],
+			[
+				"user",
+				"User"
+			],
+			[
 				"font",
 				"font-style"
 			],
@@ -16,82 +28,18 @@
 	"buffers":
 	[
 		{
-			"file": "musitect/app/config/database.php",
+			"file": "musitect/app/tests/ExampleTest.php",
 			"settings":
 			{
-				"buffer_size": 3323,
+				"buffer_size": 725,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "musitect/composer.json",
+			"file": "musitect/app/tests/TestCase.php",
 			"settings":
 			{
-				"buffer_size": 726,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "musitect/app/views/layouts/master.blade.php",
-			"settings":
-			{
-				"buffer_size": 411,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "musitect/app/routes.php",
-			"settings":
-			{
-				"buffer_size": 602,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/jasperboyd/Developer/brokenMusitect/app/routes.php",
-			"settings":
-			{
-				"buffer_size": 3079,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "musitect/app/controllers/HomeController.php",
-			"settings":
-			{
-				"buffer_size": 584,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "musitect/app/controllers/RegisterController.php",
-			"settings":
-			{
-				"buffer_size": 610,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "musitect/app/views/forms/login.blade.php",
-			"settings":
-			{
-				"buffer_size": 246,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "musitect/app/views/forms/register.blade.php",
-			"settings":
-			{
-				"buffer_size": 488,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "musitect/app/views/welcome.blade.php",
-			"settings":
-			{
-				"buffer_size": 569,
+				"buffer_size": 334,
 				"line_ending": "Unix"
 			}
 		},
@@ -99,34 +47,15 @@
 			"file": "musitect/app/tests/Models/UserTest.php",
 			"settings":
 			{
-				"buffer_size": 117,
+				"buffer_size": 132,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "<?php\nreturn array(\n  'default' => 'sqlite',\n  'connections' => array(\n    'sqlite' => array(\n      'driver'   => 'sqlite',\n      'database' => ':memory:',\n      'prefix'   => ''\n    ),\n  )\n);",
-			"file": "musitect/app/config/testing/database.php",
-			"file_size": -1,
-			"file_write_time": -1,
+			"file": "musitect/phpunit.xml",
 			"settings":
 			{
-				"buffer_size": 192,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/jasperboyd/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
-			"settings":
-			{
-				"buffer_size": 79,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/Users/jasperboyd/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
-			"settings":
-			{
-				"buffer_size": 13677,
+				"buffer_size": 671,
 				"line_ending": "Unix"
 			}
 		}
@@ -163,6 +92,44 @@
 	},
 	"file_history":
 	[
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/config/database.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/composer.json",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/views/layouts/master.blade.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/routes.php",
+		"/Users/jasperboyd/Developer/brokenMusitect/app/routes.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/controllers/HomeController.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/views/songs/show.blade.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/controllers/RegisterController.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/views/forms/login.blade.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/views/forms/register.blade.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/views/welcome.blade.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/tests/Models/UserTest.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/config/app.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/controllers/SongController.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/database/migrations/2013_11_10_175914_create_songs_table.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/models/Song.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/views/songs/index.blade.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/database/migrations/2013_11_08_210213_create_users_table.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/database/seeds/DatabaseSeeder.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/database/seeds/UserTableSeederTableSeeder.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/database/seeds/UserTableSeeder.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/models/User.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/database/migrations/2013_11_08_210455_add_username_to_users_table.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/controllers/UserController.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/controllers/LibraryController.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/models/Library.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/database/migrations/2013_11_10_191359_create_user_table.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/models/Chord.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/models/Key.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/models/Phrase.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/models/Word.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/database/migrations/2013_11_10_191326_create_user_libraries.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/bootstrap/paths.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/tests/helper.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/tests/ExampleTest.php",
+		"/Users/jasperboyd/Developer/Musitect/musitect/app/config/testing/database.php",
+		"/Users/jasperboyd/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/Users/jasperboyd/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
 		"/Volumes/WDHD/Users/jasperboyd/Git/Musitect/Musitect/app/views/hello.php"
 	],
 	"find":
@@ -198,23 +165,23 @@
 	"groups":
 	[
 		{
-			"selected": 13,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "musitect/app/config/database.php",
+					"file": "musitect/app/tests/ExampleTest.php",
 					"settings":
 					{
-						"buffer_size": 3323,
+						"buffer_size": 725,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								889,
-								889
+								10,
+								10
 							]
 						],
 						"settings":
@@ -223,30 +190,30 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 368.0,
+						"translation.y": 730.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "musitect/composer.json",
+					"file": "musitect/app/tests/TestCase.php",
 					"settings":
 					{
-						"buffer_size": 726,
+						"buffer_size": 334,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								355,
-								355
+								271,
+								271
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
@@ -257,23 +224,22 @@
 				},
 				{
 					"buffer": 2,
-					"file": "musitect/app/views/layouts/master.blade.php",
+					"file": "musitect/app/tests/Models/UserTest.php",
 					"settings":
 					{
-						"buffer_size": 411,
+						"buffer_size": 132,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								212,
-								212
+								20,
+								8
 							]
 						],
 						"settings":
 						{
-							"auto_name": "",
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
@@ -284,295 +250,28 @@
 				},
 				{
 					"buffer": 3,
-					"file": "musitect/app/routes.php",
+					"file": "musitect/phpunit.xml",
 					"settings":
 					{
-						"buffer_size": 602,
+						"buffer_size": 671,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								602,
-								602
+								642,
+								642
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/Users/jasperboyd/Developer/brokenMusitect/app/routes.php",
-					"settings":
-					{
-						"buffer_size": 3079,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1809,
-								1708
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 609.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "musitect/app/controllers/HomeController.php",
-					"settings":
-					{
-						"buffer_size": 584,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								515,
-								515
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "musitect/app/controllers/RegisterController.php",
-					"settings":
-					{
-						"buffer_size": 610,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5,
-								5
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "musitect/app/views/forms/login.blade.php",
-					"settings":
-					{
-						"buffer_size": 246,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								192,
-								192
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "musitect/app/views/forms/register.blade.php",
-					"settings":
-					{
-						"buffer_size": 488,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								466,
-								431
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "musitect/app/views/welcome.blade.php",
-					"settings":
-					{
-						"buffer_size": 569,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								569,
-								569
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "musitect/app/tests/Models/UserTest.php",
-					"settings":
-					{
-						"buffer_size": 117,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								115,
-								115
-							]
-						],
-						"settings":
-						{
-							"auto_name": "",
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "musitect/app/config/testing/database.php",
-					"settings":
-					{
-						"buffer_size": 192,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								192,
-								192
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "/Users/jasperboyd/Library/Application Support/Sublime Text 2/Packages/User/Preferences.sublime-settings",
-					"settings":
-					{
-						"buffer_size": 79,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "/Users/jasperboyd/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
-					"settings":
-					{
-						"buffer_size": 13677,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4711,
-								4711
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"syntax": "Packages/XML/XML.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2654.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -636,6 +335,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 257.0,
+	"side_bar_width": 434.0,
 	"status_bar_visible": true
 }

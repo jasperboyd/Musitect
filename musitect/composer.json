@@ -18,7 +18,6 @@
 	},
     "require-dev": {
          "phpunit/phpunit": "3.7.*",
-         "way/phpunit-wrappers": "dev-master",
          "way/generators": "dev-master",
          "mockery/mockery": "dev-master"    
     },
