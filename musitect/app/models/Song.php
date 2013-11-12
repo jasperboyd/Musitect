@@ -8,6 +8,11 @@ class Song extends Eloquent {
   
   protected $guarded = array('id'); 
 
+  //Validation rules
+  public static $rules = array(
+      'title' => 'required|between:1,200'
+    );
+
   public function library()
   {
     return $this->belongsTo('Library')

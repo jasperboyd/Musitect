@@ -6,7 +6,10 @@ class Chord extends Word {
 
 	protected $fillable = array('Chord');
 
-	public static $rules = array();
+	//Validation rules
+	public static $rules = array(
+      'Chord' => 'required|between:1,6'
+    );
 	
 	public function word()
 	{ 

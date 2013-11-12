@@ -3,17 +3,25 @@
 use Eloquent;
 
 class Library extends User {
-	protected $guarded = array();
+	
+  //Mass-assignable
+  protected $fillable = array('title'); 
 
-	public static $rules = array();
+  //Non-mass-assignable
+  protected $guarded = array('id');
+
+  //Validation rules
+	public static $rules = array(
+      'title' => 'required|between:1,200'
+    );
 
 	public function user()
-  	{
-    	return $this->belongsTo('User');
-  	}
+  {
+   	return $this->belongsTo('User');
+ 	}
 
-  	public function songs() 
-  	{ 
+  public function songs() 
+  { 
   		return $this->hasMany('Song');
-  	}
+  }
 }

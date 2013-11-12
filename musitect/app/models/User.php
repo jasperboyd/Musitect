@@ -29,18 +29,10 @@ class User extends Ardent implements UserInterface, RemindableInterface {
 	* Validation rules
 	*/
   	public static $rules = array(
-    	"save" => array(
-    	  'username' => 'required|min:4',
-      	  'email' => 'required|email',
-      	  'password' => 'required'
-    	),
-    	"create" => array(
-     	  'username' => 'unique:users',
-      	  'email' => 'unique:users',
-          'password' => 'confirmed',
-          'password_confirmation' => 'required'
-    ),
-    	"update" => array()
+    	'username'              => 'required|between:4,16',
+    	'email'                 => 'required|email',
+    	'password'              => 'required|alpha_num|between:4,8|confirmed',
+    	'password_confirmation' => 'required|alpha_num|between:4,8',
   	);
 
   	/**
