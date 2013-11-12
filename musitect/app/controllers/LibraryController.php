@@ -3,7 +3,7 @@
 class LibraryController extends BaseController {
 
 	/**
-	 * Display a listing of the resource.
+	 * Display a listing of the library.
 	 *
 	 * @return Response
 	 */
@@ -15,7 +15,7 @@ class LibraryController extends BaseController {
 	}
 
 	/**
-	 * Show the form for creating a new resource.
+	 * Show the form for creating a new library.
 	 *
 	 * @return Response
 	 */
@@ -25,7 +25,7 @@ class LibraryController extends BaseController {
 	}
 
 	/**
-	 * Store a newly created resource in storage.
+	 * Store a newly created library in storage.
 	 *
 	 * @return Response
 	 */
@@ -35,7 +35,7 @@ class LibraryController extends BaseController {
 	}
 
 	/**
-	 * Display the specified resource.
+	 * Display the specified library.
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -46,7 +46,7 @@ class LibraryController extends BaseController {
 	}
 
 	/**
-	 * Show the form for editing the specified resource.
+	 * Show the form for editing the specified library.
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -57,7 +57,7 @@ class LibraryController extends BaseController {
 	}
 
 	/**
-	 * Update the specified resource in storage.
+	 * Update the specified library in storage.
 	 *
 	 * @param  int  $id
 	 * @return Response
@@ -68,7 +68,7 @@ class LibraryController extends BaseController {
 	}
 
 	/**
-	 * Remove the specified resource from storage.
+	 * Remove the specified library from storage.
 	 *
 	 * @param  int  $id
 	 * @return Response

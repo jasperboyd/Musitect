@@ -7,9 +7,9 @@ class SongController extends BaseController {
 */
   protected $Song;
 
-  /**
-* Inject the Song Repository
-*/
+ /**
+  * Inject the Song Repository
+  */
   public function __construct(Song $Song)
   {
     $this->Song = $Song;

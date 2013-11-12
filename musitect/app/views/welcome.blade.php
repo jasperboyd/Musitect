@@ -23,7 +23,7 @@
 
 <section> 
 	<h1>Login</h1>
-	@include('forms.login')
+	
 </section> 
 
 @stop

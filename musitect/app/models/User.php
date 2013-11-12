@@ -82,6 +82,6 @@ class User extends Ardent implements UserInterface, RemindableInterface {
 
 	public function setPasswordAttribute($value)
 	{
-		$this->arttributes['password'] = Hash::make($value);
+		$this->attributes['password'] = Hash::make($value);
 	}
 }

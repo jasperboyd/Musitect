@@ -21,28 +21,4 @@ Route::get('/', array(
 ));
 
 Route::resource('user', 'UserController');
-
-Route::get('songs', array(
-	'uses' => 'SongsController@index',
-	'as' => 'songs.index'
-));
-
-Route::get('{username}', array (
-	'users' => 'UserController@show', 
-	'as' => 'user.show'
-));
-
-Route::get('{username}/library', array(
-	'uses' => 'LibraryController@index', 
-	'as' => 'library.index' 
-));
-
-Route::get('{username}/libraries', array(
-	'uses' => 'LibraryController@index', 
-	'as' => 'library.index' 
-));
-
-Route::get('{username}/{library}', array(
-	'uses' => 'LibraryController@show', 
-	'as' => 'library.show' 
-));
+Route::resource('library', 'LibaryController');
