@@ -14,9 +14,47 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	 */
 	protected $table = 'users';
 
-	protected $fillable = array('username', 'email'); 
+	//Attributes that are Mass Assignable
+	protected $fillable = array('username', 'email', 'password', 'password_confirmation'); 
 
-	protected $guarded = array('password', 'id');
+	//Hidden Completely
+	protected $guarded = array('id');
+
+	//Hidden from JSON
+	protected $hidden = array('password');
+
+	/**
+	* Validation rules
+	*/
+  	public static $rules = array(
+    	"save" => array(
+    	  'username' => 'required|min:4',
+      	  'email' => 'required|email',
+      	  'password' => 'required'
+    	),
+    	"create" => array(
+     	  'username' => 'unique:users',
+      	  'email' => 'unique:users',
+          'password' => 'confirmed',
+          'password_confirmation' => 'required'
+    ),
+    	"update" => array()
+  	);
+
+  	/**
+	* Auto purge redundant attributes
+	*
+	* @var bool
+	*/
+    public $autoPurgeRedundantAttributes = true;
+
+    /**
+    * Get the Users Library of Songs
+    *
+ 	*/
+    public function libraries(){
+		return $this->hasMany('libraries');
+	}
 
 	/**
 	 * Get the unique identifier for the user.
@@ -51,9 +89,5 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	public function setPasswordAttribute($value)
 	{
 		$this->arttributes['password'] = Hash::make($value);
-	}
-
-	public function libraries(){
-		return $this->hasMany('libraries');;
 	}
 }

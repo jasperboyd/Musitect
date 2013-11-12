@@ -2,14 +2,8 @@
 
 class RegisterController extends BaseController {
 
-  /**
-* User Repository
-*/
   protected $user;
 
-  /**
-* Inject the User Repository
-*/
   public function __construct(User $user)
   {
     $this->user = $user;
