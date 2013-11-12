@@ -1,3 +1,3 @@
 @foreach($song as $songs); 
-	{{ link_to("tasks/$task->id", $tasks->title); }} 
+	{{ link_to("songs/$song->id", $songs->title); }} 
 @endforeach

@@ -18,7 +18,7 @@
 
 <section> 
 	<h1>Register</h1>
-	@include('forms.register')
+	@include('users.create')
 </section> 
 
 <section> 

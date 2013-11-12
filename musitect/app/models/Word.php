@@ -2,6 +2,8 @@
 
 class Word extends Phrase {
 	
+	protected $fillable = array('word'); 
+	
 	protected $guarded = array('id');
 	
 	public function phrase(){ 

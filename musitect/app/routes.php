@@ -20,10 +20,7 @@ Route::get('/', array(
   'as' => 'home.welcome'
 ));
 
-Route::post('register', array(
-  'uses' => 'RegisterController@store',
-  'as' => 'register.store'
-));
+Route::resource('user', 'UserController');
 
 Route::get('songs', array(
 	'uses' => 'SongsController@index',
