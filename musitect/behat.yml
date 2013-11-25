@@ -1,5 +1,7 @@
 # behat.yml
 default:
+    paths: 
+        features: app\tests\acceptance
     formatter:
         name:                       pretty
         parameters:
@@ -9,7 +11,8 @@ default:
             language:               en
             output_path:            null
             multiline_arguments:    true
-extensions:
+    extensions:
         Vendor\Bin\Behat\MinkExtension\Extension:
             goutte: ~
             selenium2: ~
+            home_url: http://localhost:8000

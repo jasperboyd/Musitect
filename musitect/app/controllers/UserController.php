@@ -34,9 +34,9 @@ class UserController extends BaseController {
 	 */
 	public function store()
 	{
-		 $s = $this->user->create(Input::all());
+		$u = $this->user->create(Input::all());
  
-  		if($s->isSaved())
+  		if($u::isSaved())
   		{
     			return Redirect::route('users.index')
       			->with('flash', 'The new user has been created');
@@ -44,7 +44,7 @@ class UserController extends BaseController {
  
   		return Redirect::route('users.create')
     			->withInput()
-    			->withErrors($s->errors());
+    			->withErrors($u->errors());
 	}
 
 	/**
