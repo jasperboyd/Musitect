@@ -9,14 +9,13 @@ class Song extends Magniloquent {
 *
 * @var array
 */
-  protected $fillable = array('body', 'title');
+  protected $fillable = array('title');
 
   /**
 * Validation rules
 */
   public static $rules = array(
     "save" => array(
-      'body' => 'required',
       'title' => 'required', 
       'user_id' => 'required|numeric'
     ),
@@ -28,6 +27,7 @@ class Song extends Magniloquent {
   * Factory
   */
   public static $factory = array(
+    'title' => 'string',
     'body' => 'text',
     'user_id' => 'factory|User',
   );
@@ -37,5 +37,6 @@ class Song extends Magniloquent {
 */
   protected static $relationships = array(
         'users' => array('belongsTo', 'User'),
+        'phrases' => array('hasMany', 'Phrase'),
     );
 }

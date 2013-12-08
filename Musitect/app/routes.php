@@ -51,3 +51,4 @@ Route::get('logout', array(
 
 Route::resource('users', 'UserController'); 
 Route::resource('song', 'SongController'); 
+Route::resource('phrase', 'PhraseController'); 

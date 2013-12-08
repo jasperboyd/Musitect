@@ -12,10 +12,10 @@
     <p>{{ Form::label('title', 'Title') }}
       {{ Form::text('title') }}</p>
 
-    <p>{{ Form::label('body', 'Body') }}
-    {{ Form::textarea('body') }}</p>
-
-    <p>{{ Form::submit('Submit') }}</p>
+    <p>{{ Form::submit('Save Title') }}</p>
 
   {{ Form::close() }}
+
+  @include('phrases.create')
+
 @stop
