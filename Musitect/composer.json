@@ -5,7 +5,6 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.0.*",
-		"laravelbook/ardent": "dev-master",
 		"magniloquent/magniloquent": "dev-master"
 	},
 	"require-dev": { 
