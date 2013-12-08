@@ -93,7 +93,7 @@ class SongController extends BaseController {
 
     if($s->isSaved())
     {
-      return Redirect::route('song.show', $id)
+      return Redirect::route('song.edit', $id)
         ->with('flash', 'The song was updated');
     }
 

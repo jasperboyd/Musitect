@@ -9,7 +9,7 @@
 
     <h1> {{{ $song->title }}} </h1> 
 
-   {{ Form::open(['route' => ['song.update' , $song->id]], ['method' => 'PUT']) }}
+  {{ Form::model($song, array('route' => array('song.update', $song->id), 'method' => 'PUT')) }}
 
    <p>{{ Form::label('title', 'Title') }}
        {{ Form::text('title') }}</p>
