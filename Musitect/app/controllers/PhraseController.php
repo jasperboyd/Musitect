@@ -42,17 +42,17 @@ class PhraseController extends BaseController {
 *
 * @return Response
 */
-  public function store()
+  public function store($song)
   {
-    $s = $this->phrase->create(Input::all());
+    $s = $this->phrase->create(Input::all(), $song);
 
     if($s->isSaved())
     {
-      return Redirect::route('home.feed')
+      return Redirect::action('SongController@edit', $s->song_id)
         ->with('flash', 'A new phrase has been created!');
     }
 
-    return Redirect::route('phrase.create')
+    return Redirect::action('SongController@edit', $song)
       ->withInput()
       ->withErrors($s->errors());
   }

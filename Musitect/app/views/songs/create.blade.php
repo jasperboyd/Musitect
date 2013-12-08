@@ -7,15 +7,13 @@
     </ul>
   @endif
 
-  {{ Form::open(array('route' => 'song.store')) }}
+  {{ Form::open(['route' => 'song.store']) }}
 
-    <p>{{ Form::label('title', 'Title') }}
-      {{ Form::text('title') }}</p>
+  <p>{{ Form::label('title', 'Title') }}
+       {{ Form::text('title') }}</p>
 
-    <p>{{ Form::submit('Save Title') }}</p>
+  <p>{{ Form::submit('Name Your Tune') }}</p>
 
   {{ Form::close() }}
-
-  @include('phrases.create')
 
 @stop

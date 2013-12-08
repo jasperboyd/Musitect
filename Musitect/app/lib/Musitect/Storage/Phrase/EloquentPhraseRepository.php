@@ -2,6 +2,8 @@
 
 use Phrase;
 
+use Musitect\Storage\Song\SongRepository as Song; 
+
 class EloquentPhraseRepository implements PhraseRepository {
 
   public function all()
@@ -14,21 +16,16 @@ class EloquentPhraseRepository implements PhraseRepository {
     return Phrase::find($id);
   }
 
-  public function create($input)
+  public function create($input, $songid)
   {
-    // Create new post
-    $phrase = new Phrase($input);
+    // Create new phrase
+    $phrase = new Phrase($input); 
 
-    // Get the current user
-    $user = \Auth::user();
+    $phrase->song_id = $songid;
 
-    $phrase->user_id = $user->id; 
+    $phrase->save();
 
-    // Save the post
-    $user->phrases()->save($phrase);
-
-    // Return the post
-    return $phrase;
+    return $phrase; 
   }
 
   public function update($id)

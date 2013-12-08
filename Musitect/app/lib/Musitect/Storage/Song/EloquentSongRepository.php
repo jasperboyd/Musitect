@@ -22,8 +22,6 @@ class EloquentSongRepository implements SongRepository {
     // Get the current user
     $user = \Auth::user();
 
-    $song->user_id = $user->id; 
-
     // Save the post
     $user->songs()->save($song);
 

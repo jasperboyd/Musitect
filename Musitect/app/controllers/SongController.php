@@ -48,8 +48,8 @@ class SongController extends BaseController {
 
     if($s->isSaved())
     {
-      return Redirect::route('home.feed')
-        ->with('flash', 'A new song has been created!');
+      return Redirect::action('SongController@edit', $s->id)
+        ->with('flash', 'Your song was created!');
     }
 
     return Redirect::route('song.create')

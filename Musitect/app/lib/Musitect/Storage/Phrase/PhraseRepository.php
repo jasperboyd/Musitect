@@ -6,7 +6,7 @@ interface PhraseRepository {
 
   public function find($id);
 
-  public function create($input);
+  public function create($input, $songid);
 
   public function update($input);
 

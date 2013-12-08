@@ -49,6 +49,22 @@ Route::get('logout', array(
   'as' => 'session.destroy'
 ));
 
+Route::get('phrases/create', array(
+  'uses' => 'PhraseController@create',
+  'as' => 'phrases.create'
+));
+
+Route::post('song/{song}/phrases', array(
+  'uses' => 'PhraseController@store',
+  'as' => 'phrases.store'
+)); 
+
+//Route::get('song/{id}/edit/phrase/create', function($id){ 
+
+
+//}
+
 Route::resource('users', 'UserController'); 
 Route::resource('song', 'SongController'); 
-Route::resource('phrase', 'PhraseController'); 
+
+

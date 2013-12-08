@@ -1,14 +1,16 @@
-@if($errors->any())
+  @if($errors->any())
     <ul>
       {{ implode('', $errors->all('<li>:message</li>'))}}
     </ul>
   @endif
 
-  {{ Form::open(array('route' => 'phrase.store')) }}
+  {{ Form::open(['url' => 'song/' . $song->id . '/phrases']) }} 
 
-    <p>{{ Form::label('phrase', 'Phrase') }}
-      {{ Form::text('phrase') }}</p>
+  	<p>{{ Form::label('phrase', 'Phrase') }}
+       {{ Form::text('phrase') }}</p>
 
-    <p>{{ Form::submit('Save Phrase') }}</p>
+       {{ Form::hidden('song_id', $song->id)}}
+
+    <p>{{ Form::submit('Add a phrase') }}</p>
 
   {{ Form::close() }}
