@@ -14,6 +14,10 @@ class StorageServiceProvider extends ServiceProvider {
     	"Musitect\Storage\Song\SongRepository", 
     	"Musitect\Storage\Song\EloquentSongRepository"
     );
+    $this->app->bind(
+      "Musitect\Storage\Phrase\PhraseRepository", 
+      "Musitect\Storage\Phrase\EloquentPhraseRepository"
+    ); 
   }
 
 }
