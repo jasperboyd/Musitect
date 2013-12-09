@@ -77,11 +77,18 @@ Route::post('song/{song}/phrases', array(
   'as' => 'phrases.store'
 )); 
 
-Route::get('song/{song}/phrases/{phrase}', array(
+Route::delete('song/{song}/phrases/{phrases}', array(
   'before' => 'auth',
-  'uses' => 'PhraseController@destroy',
+  'uses' => 'PhraseController@destroy', 
   'as' => 'phrases.destroy'
 ));
+
+Route::get('song/{song}/phrases/{phrase}/edit', array(
+  'before' => 'auth', 
+  'uses' => 'PhraseController@edit',
+  'as' => 'phrases.edit'
+));
+
 
 
 

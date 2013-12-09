@@ -1,13 +1,14 @@
 <?php
 
 use Musitect\Storage\Phrase\PhraseRepository as Phrase;
+use Musitect\Storage\Song\SongRepository as Song; 
 
 class PhraseController extends BaseController {
 
   /**
 * phrase Repository
 */
-  protected $phrase;
+  protected $phrase, $song;
 
   /**
 * Inject the phrase Repository
@@ -109,10 +110,11 @@ class PhraseController extends BaseController {
 * @param int $id
 * @return Response
 */
-  public function destroy($id, $songId)
+  public function destroy($songId, $phrase)
   {
-    $this->phrase->delete($id); 
-    return Redirect::route('song.edit', $songId)
+    $this->phrase->delete($phrase);  
+
+    return Redirect::action('SongController@edit', $songId)
       ->with('flash', 'The phrase was deleted');
   }
 

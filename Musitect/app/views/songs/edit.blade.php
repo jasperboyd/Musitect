@@ -6,8 +6,8 @@
        {{ implode('', $errors->all('<li>:message</li>'))}}
      </ul>
   @endif
-
-    <h1> {{{ $song->title }}} </h1> 
+  
+  <h1> {{{ $song->title }}} </h1> 
 
   {{ Form::model($song, array('route' => array('song.update', $song->id), 'method' => 'PUT')) }}
 
@@ -23,7 +23,7 @@
     @foreach($phrases as $phrase)
 
       <p>{{ $phrase->phrase }}
-      {{ link_to_action('PhraseController@destroy', 'burn',  [$phrase->id, $phrase->song_id]); }}</p>
+      @include('phrases.destroy', array($phrase))</p>
     @endforeach
 
     @include('phrases.create', array($song))
