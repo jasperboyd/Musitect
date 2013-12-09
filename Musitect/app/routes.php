@@ -52,6 +52,9 @@ Route::get('logout', array(
 
 Route::resource('users', 'UserController'); 
 
+/*
+Songs
+*/
 
 Route::resource('song', 'SongController'); 
 
@@ -87,6 +90,16 @@ Route::get('song/{song}/phrases/{phrase}/edit', array(
   'before' => 'auth', 
   'uses' => 'PhraseController@edit',
   'as' => 'phrases.edit'
+));
+
+/*
+Chords
+*/
+
+Route::get('chords/create', array(
+  'before' => 'auth', 
+  'uses' => 'ChordController@create',
+  'as' => 'chords.create'
 ));
 
 

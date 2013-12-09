@@ -6,7 +6,7 @@
 
   {{ Form::open(['url' => 'song/' . $song->id . '/phrases']) }} 
 
-  	<p>{{ Form::label('phrase', 'Phrase') }}
+  	<p>{{ Form::label('phrase', 'Phrase:') }}
        {{ Form::text('phrase') }}</p>
 
        {{ Form::hidden('song_id', $song->id)}}

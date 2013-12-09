@@ -21,9 +21,10 @@
    <?php $phrases = Phrase::where('song_id', '=', $song->id)->get() ?>
 
     @foreach($phrases as $phrase)
-
-      <p>{{ $phrase->phrase }}
-      @include('phrases.destroy', array($phrase))</p>
+      <p>
+      @include('phrases.edit', array($phrase))
+      @include('phrases.destroy', array($phrase))
+      </p>
     @endforeach
 
     @include('phrases.create', array($song))
