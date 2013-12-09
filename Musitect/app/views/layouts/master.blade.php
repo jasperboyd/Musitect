@@ -1,7 +1,6 @@
 <html lang="en">
 <head>
 <title>Musitect</title> 
-<link href='http://fonts.googleapis.com/css?family=Josefin+Sans:100|Crimson+Text:400,600' rel='stylesheet' type='text/css'>
 {{HTML::style('styles/css/screen.css');}}
 </head>
 <body>
@@ -12,6 +11,7 @@
     @if (Auth::check())
     <nav>
     	<a href="{{action('SongController@create');}}">New Song</a> 
+        <!-- User Settings --> 
     	<a href="{{action('SessionController@destroy');}}">Logout</a> 
     </nav>
     @endif

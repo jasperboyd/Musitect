@@ -39,9 +39,7 @@ class EloquentPhraseRepository implements PhraseRepository {
 
   public function delete($id)
   {
-    $phrase = $this->find($id);
-
-    return $phrase->delete();
+    return Phrase::destroy($id); ;
   }
 
 }

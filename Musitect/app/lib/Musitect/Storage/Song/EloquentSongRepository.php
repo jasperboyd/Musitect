@@ -16,7 +16,7 @@ class EloquentSongRepository implements SongRepository {
 
   public function create($input)
   {
-    // Create new post
+    // Create new Song
     $song = new Song($input);
 
     // Get the current user
@@ -40,9 +40,7 @@ class EloquentSongRepository implements SongRepository {
 
   public function delete($id)
   {
-    $song = $this->find($id);
-
-    return $song->delete();
+    return Song::destroy($id);
   }
 
 }

@@ -1,14 +1,7 @@
 <?php
 
 /*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
-|
+Home
 */
 
 Route::get('/', array(
@@ -27,6 +20,10 @@ Route::get('home/feed', array(
 	'as' => 'home.feed'
 ));
 
+/*
+Register
+*/
+
 Route::get('register', array(
   'uses' => 'RegistrationController@index',
   'as' => 'register.index'
@@ -35,6 +32,10 @@ Route::post('register', array(
   'uses' => 'RegistrationController@store',
   'as' => 'register.store'
 ));
+
+/*
+Session
+*/
 
 Route::get('login', array(
   'uses' => 'SessionController@create',
@@ -49,22 +50,39 @@ Route::get('logout', array(
   'as' => 'session.destroy'
 ));
 
+Route::resource('users', 'UserController'); 
+
+
+Route::resource('song', 'SongController'); 
+
+Route::get('song/{song}/destroy', array(
+  'before' => 'auth', 
+  'uses' => 'SongController@showDestroy',
+  'as' => 'song.showdestroy'
+));
+
+/*
+Phrases
+*/
+
 Route::get('phrases/create', array(
+  'before' => 'auth',
   'uses' => 'PhraseController@create',
   'as' => 'phrases.create'
 ));
 
 Route::post('song/{song}/phrases', array(
+  'before' => 'auth',
   'uses' => 'PhraseController@store',
   'as' => 'phrases.store'
 )); 
 
-//Route::get('song/{id}/edit/phrase/create', function($id){ 
+Route::get('song/{song}/phrases/{phrase}', array(
+  'before' => 'auth',
+  'uses' => 'PhraseController@destroy',
+  'as' => 'phrases.destroy'
+));
 
 
-//}
-
-Route::resource('users', 'UserController'); 
-Route::resource('song', 'SongController'); 
 
 

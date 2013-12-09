@@ -21,7 +21,9 @@
    <?php $phrases = Phrase::where('song_id', '=', $song->id)->get() ?>
 
     @foreach($phrases as $phrase)
-      <p>{{ $phrase->phrase }}</p>
+
+      <p>{{ $phrase->phrase }}
+      {{ link_to_action('PhraseController@destroy', 'burn',  [$phrase->id, $phrase->song_id]); }}</p>
     @endforeach
 
     @include('phrases.create', array($song))

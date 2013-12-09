@@ -14,6 +14,7 @@ class PhraseController extends BaseController {
 */
   public function __construct(Phrase $phrase)
   {
+    $this->beforeFilter('auth', array('except' => 'getLogin'));
     $this->phrase = $phrase;
   }
 
@@ -108,9 +109,11 @@ class PhraseController extends BaseController {
 * @param int $id
 * @return Response
 */
-  public function destroy($id)
+  public function destroy($id, $songId)
   {
-    return $this->phrase->delete($id);
+    $this->phrase->delete($id); 
+    return Redirect::route('song.edit', $songId)
+      ->with('flash', 'The phrase was deleted');
   }
 
 }

@@ -14,6 +14,7 @@ class SongController extends BaseController {
 */
   public function __construct(Song $song)
   {
+     $this->beforeFilter('auth', array('except' => 'getLogin'));
     $this->song = $song;
   }
 
@@ -102,6 +103,11 @@ class SongController extends BaseController {
       ->withErrors($s->errors());
   }
 
+  public function showDestroy($songid)
+  {
+    return View::make('songs.destroy', compact('songid')); 
+  }
+
   /**
 * Remove the specified resource from storage.
 *
@@ -110,7 +116,10 @@ class SongController extends BaseController {
 */
   public function destroy($id)
   {
-    return $this->song->delete($id);
+    $this->song->delete($id);
+
+    return Redirect::route('home.feed')
+      ->with('flash', 'The phrase was deleted');
   }
 
 }
