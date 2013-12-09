@@ -50,6 +50,17 @@ Route::get('logout', array(
   'as' => 'session.destroy'
 ));
 
+/*
+Collectives & CollectivePasses
+*/
+
+Route::resource('collectives', 'CollectiveController'); 
+Route::resource('collectivepasses', 'CollectivePassController');
+
+/*
+Users
+*/
+
 Route::resource('users', 'UserController'); 
 
 /*

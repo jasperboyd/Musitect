@@ -1,6 +1,6 @@
 <?php
 
-class CollectivePassesTableSeeder extends Seeder { 
+class TheCollectivePassesTableSeeder extends Seeder { 
 
 	public function run() 
 	{ 

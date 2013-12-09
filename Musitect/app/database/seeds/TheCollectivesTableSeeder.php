@@ -1,6 +1,6 @@
 <?php
 
-class CollectiveTableSeeder extends Seeder { 
+class TheCollectivesTableSeeder extends Seeder { 
 
 	public function run() 
 	{ 
