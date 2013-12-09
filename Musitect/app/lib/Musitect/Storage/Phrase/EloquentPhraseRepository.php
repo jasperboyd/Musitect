@@ -2,8 +2,6 @@
 
 use Phrase;
 
-use Musitect\Storage\Song\SongRepository as Song; 
-
 class EloquentPhraseRepository implements PhraseRepository {
 
   public function all()

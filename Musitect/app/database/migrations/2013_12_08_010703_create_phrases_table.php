@@ -16,7 +16,8 @@ class CreatePhrasesTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('song_id');
-			$table->string('phrase'); 
+			$table->string('phrase')->nullable(); 
+			$table->string('chord')->nullable();
 			$table->timestamps();
 		});
 	}

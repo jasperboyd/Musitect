@@ -4,14 +4,13 @@ use Magniloquent\Magniloquent\Magniloquent;
 
 class Phrase extends Magniloquent {
 	
-	protected $fillable = array('phrase');
+	protected $fillable = array('phrase', 'chord');
 	
 	/**
 	* Validation rules
 	*/
     public static $rules = array(
     	"save" => array(
-      	   'phrase' => 'required',
      	   'song_id' => 'required|numeric'
         ),
     	"create" => array(),
@@ -23,7 +22,8 @@ class Phrase extends Magniloquent {
     */
     public static $factory = array(
     	'phrase' => 'string',
-    	'song_id' => 'factory|Song',
+        'chord' => 'string', 
+    	'song_id' => 'factory|Song'
     );
     
     /**

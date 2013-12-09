@@ -86,20 +86,10 @@ Route::delete('song/{song}/phrases/{phrases}', array(
   'as' => 'phrases.destroy'
 ));
 
-Route::get('song/{song}/phrases/{phrase}/edit', array(
+Route::put('song/{song}/phrases/{phrase}/edit', array(
   'before' => 'auth', 
-  'uses' => 'PhraseController@edit',
-  'as' => 'phrases.edit'
-));
-
-/*
-Chords
-*/
-
-Route::get('chords/create', array(
-  'before' => 'auth', 
-  'uses' => 'ChordController@create',
-  'as' => 'chords.create'
+  'uses' => 'PhraseController@update',
+  'as' => 'phrases.update'
 ));
 
 

@@ -9,7 +9,7 @@ class Song extends Magniloquent {
 *
 * @var array
 */
-  protected $fillable = array('title');
+  protected $fillable = array('title', 'tempo', 'key');
 
   /**
 * Validation rules
@@ -17,6 +17,7 @@ class Song extends Magniloquent {
   public static $rules = array(
     "save" => array(
       'title' => 'required', 
+      'tempo' => 'numeric',
       'user_id' => 'required|numeric'
     ),
     "create" => array(),

@@ -9,10 +9,16 @@
 
   {{ Form::open(['route' => 'song.store']) }}
 
-  <p>{{ Form::label('title', 'Title') }}
+  <p>{{ Form::label('title', 'Title:') }}
        {{ Form::text('title') }}</p>
 
-  <p>{{ Form::submit('Name Your Tune') }}</p>
+  <p>{{ Form::label('key', 'Key:') }}
+       {{ Form::text('key') }}</p>
+
+  <p>{{ Form::label('tempo', 'Tempo:') }}
+       {{ Form::text('tempo') }}</p>
+
+  <p>{{ Form::submit('Name your tune!') }}</p>
 
   {{ Form::close() }}
 

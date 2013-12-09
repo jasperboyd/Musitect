@@ -89,17 +89,17 @@ class PhraseController extends BaseController {
 * @param int $id
 * @return Response
 */
-  public function update($id)
+  public function update($songId, $id)
   {
     $s = $this->phrase->update($id);
 
     if($s->isSaved())
     {
-      return Redirect::route('phrase.show', $id)
+      return Redirect::route('song.edit', $songId)
         ->with('flash', 'The phrase was updated');
     }
 
-    return Redirect::route('phrase.edit', $id)
+    return Redirect::route('song.edit', $songId)
       ->withInput()
       ->withErrors($s->errors());
   }
