@@ -1,6 +1,24 @@
 <?php
 
+use Musitect\Storage\Collective\CollectiveRepository as Collective; 
+
 class CollectiveController extends \BaseController {
+
+	
+	/**
+	* Collective Repository
+	*/
+ 	protected $collective;
+
+    /**
+	* Inject the phrase Repository
+	*/
+  	public function __construct(Collective $collective)
+  	{
+    	$this->beforeFilter('auth', array('except' => 'getLogin'));
+    	$this->collective = $collective;
+  	}
+
 
 	/**
 	 * Display a listing of the resource.
@@ -9,7 +27,7 @@ class CollectiveController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		return View::make('collectives.index');
 	}
 
 	/**
@@ -19,7 +37,7 @@ class CollectiveController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('collectives.create');
 	}
 
 	/**
@@ -29,7 +47,17 @@ class CollectiveController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$s = $this->collective->create(Input::all());
+
+    if($s->isSaved())
+    {
+      return Redirect::action('CollectiveController@show', $s->id)
+        ->with('flash', 'A new phrase has been created!');
+    }
+
+    return Redirect::action('CollectiveController@create')
+      ->withInput()
+      ->withErrors($s->errors());
 	}
 
 	/**
@@ -40,7 +68,8 @@ class CollectiveController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$collective = $this->collective->find($id);
+		return View::make('collectives.show', compact('collective'));
 	}
 
 	/**
@@ -51,7 +80,8 @@ class CollectiveController extends \BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		$collective = $this->collective->find($id);
+		View::make('collectives.edit', compact('collective'));
 	}
 
 	/**
@@ -62,7 +92,17 @@ class CollectiveController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$s = $this->collective->update($id);
+
+    if($s->isSaved())
+    {
+      return Redirect::route('collective.edit', $id)
+        ->with('flash', 'The phrase was updated');
+    }
+
+    return Redirect::route('collective.edit', $id)
+      ->withInput()
+      ->withErrors($s->errors());
 	}
 
 	/**

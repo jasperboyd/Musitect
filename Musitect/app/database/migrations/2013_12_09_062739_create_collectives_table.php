@@ -15,7 +15,7 @@ class CreateCollectivesTable extends Migration {
 		Schema::create('collectives', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('name'); 
+			$table->string('name')->unique(); 
 			$table->string('founder'); 
 			$table->integer('member_number'); 
 			$table->timestamps();

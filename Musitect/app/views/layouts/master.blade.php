@@ -11,8 +11,8 @@
     @if (Auth::check())
     <nav>
     	<a href="{{ action('SongController@create') }}">New Song</a> 
-        <!--Users--> 
-        <!--Collectives--> 
+        <a href="{{ action('UserController@index') }}">Users</a> 
+        <a href="{{ action('CollectiveController@index') }}">Collectives</a>
         <a href="{{ action('UserController@show', Auth::User()->id) }}">Profile</a> 
         <a href="{{ action('UserController@edit', Auth::User()->id) }}">Settings</a> 
     	<a href="{{ action('SessionController@destroy') }}">Logout</a> 

@@ -1,5 +1,11 @@
 <?php
 
+Event::listen('collective.store', function()
+
+{
+    
+});
+
 /*
 |--------------------------------------------------------------------------
 | Register The Laravel Class Loader

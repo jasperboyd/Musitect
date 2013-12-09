@@ -3,14 +3,18 @@
 class CollectivePassController extends \BaseController {
 
 	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		//
-	}
+	* Collective Repository
+	*/
+ 	protected $collectivepass;
+
+    /**
+	* Inject the phrase Repository
+	*/
+  	public function __construct(CollectivePass $collectivepass)
+  	{
+    	$this->beforeFilter('auth', array('except' => 'getLogin'));
+    	$this->collectivepass = $collectivepass;
+  	}
 
 	/**
 	 * Show the form for creating a new resource.
@@ -19,7 +23,7 @@ class CollectivePassController extends \BaseController {
 	 */
 	public function create()
 	{
-		//
+		return View::make('collectivepasses.create');
 	}
 
 	/**
@@ -29,7 +33,17 @@ class CollectivePassController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$s = $this->collectivepass->create(Input::all());
+
+        if($s->isSaved())
+   		{
+      		return Redirect::action('CollectiveController@edit', $s->collective_id)
+        		->with('flash', 'A new phrase has been created!');
+      	}
+
+      	return Redirect::action('CollectiveController@edit', $s->collective_id)
+      		->withInput()
+      		->withErrors($s->errors());
 	}
 
 	/**

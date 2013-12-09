@@ -39,13 +39,7 @@
 
     <h2>Edit existing Phrases</h2> 
 
-    @foreach($phrases as $phrase)
-      <p>
-      @include('phrases.edit', [$phrase])
-      @include('phrases.destroy', [$phrase])
-      </p>
-    @endforeach
-
+    @include('songs.partials.phraseloop')
     
   </section>
 @stop

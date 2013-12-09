@@ -14,7 +14,9 @@ class Collective extends Magniloquent {
      	   'name' => 'required',
            'founder' => 'required'
         ),
-    	"create" => array(),
+    	"create" => array(
+            'name' => 'unique:collectives'
+        ),
     	"update" => array()
     );
 
