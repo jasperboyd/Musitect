@@ -10,7 +10,7 @@ class User extends Magniloquent implements UserInterface, RemindableInterface {
 	protected $table = 'users';
 	protected $hidden = array('password');
 	protected $guarded = array('id');
-	protected $fillable = array('username', 'email', 'password'); 
+	protected $fillable = array('username', 'email', 'first_name', 'last_name', 'primary_instrument', 'password'); 
 
 	//TODO Validation Factory & Testing
 
@@ -31,10 +31,11 @@ class User extends Magniloquent implements UserInterface, RemindableInterface {
   	
   		"create" => array(
     		'username' => 'unique:users',
-    		'email' => 'unique:users',
+    		'email' => 'unique:users'
   		),
   	
-  		"update" => array()
+  		"update" => array(
+  		)
 	
 	);
 

@@ -11,7 +11,7 @@
     @if (Auth::check())
     <nav>
     	<a href="{{action('SongController@create');}}">New Song</a> 
-        <!-- User Settings --> 
+        <a href="{{action('UserController@edit', Auth::User()->id)}}">Settings</a> 
     	<a href="{{action('SessionController@destroy');}}">Logout</a> 
     </nav>
     @endif

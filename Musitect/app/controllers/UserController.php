@@ -40,11 +40,11 @@ class UserController extends BaseController {
 
     if($s->isSaved())
     {
-      return Redirect::route('user.index')
+      return Redirect::route('users.index')
         ->with('flash', 'The new user has been created');
     }
 
-    return Redirect::route('user.create')
+    return Redirect::route('users.create')
       ->withInput()
       ->withErrors($s->errors());
   }
@@ -85,11 +85,11 @@ class UserController extends BaseController {
 
     if($s->isSaved())
     {
-      return Redirect::route('user.show', $id)
+      return Redirect::route('users.show', $id)
         ->with('flash', 'The user was updated');
     }
 
-    return Redirect::route('user.edit', $id)
+    return Redirect::route('users.edit', $id)
       ->withInput()
       ->withErrors($s->errors());
   }
