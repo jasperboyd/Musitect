@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSongsTable extends Migration {
+class CreateCollectivesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +12,12 @@ class CreateSongsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('songs', function(Blueprint $table)
+		Schema::create('collectives', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->string('title');
-			$table->string('key')->nullable(); 
-			$table->integer('tempo')->nullable();  
-			$table->integer('collective_id')->nullable();
-			$table->integer('user_id'); 
+			$table->string('name'); 
+			$table->string('founder'); 
+			$table->integer('member_number'); 
 			$table->timestamps();
 		});
 	}
@@ -31,7 +29,7 @@ class CreateSongsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('songs');
+		Schema::drop('collectives');
 	}
 
 }

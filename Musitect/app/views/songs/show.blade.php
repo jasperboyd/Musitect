@@ -1,9 +1,14 @@
+@extends('layouts.master')
+
+@section('content')
+
 <h1>{{{$song->title}}}</h1>
 
-@foreach($phrases as $phrase)
-<div class="phrase">
-	<p class="chord">{{$phrase->chord}}</p>
-	<p class="lyric">{{$phrase->phrase}}</p>  
-</div>
-@endforeach
+@include('songs.partials.phraseloop')
+
+
+<p>{{ link_to_action('SongController@edit', 'edit', $song->id) }} | 
+{{ link_to_route('song.showdestroy', 'destroy', $song->id) }}</p>
+
+@stop
 

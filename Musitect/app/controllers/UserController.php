@@ -57,7 +57,9 @@ class UserController extends BaseController {
 */
   public function show($id)
   {
-    return $this->user->find($id);
+    $user = $this->user->find($id);
+
+    return View::make('users.show', compact('user'));
   }
 
   /**

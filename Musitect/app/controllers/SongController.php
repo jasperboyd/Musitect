@@ -66,7 +66,11 @@ class SongController extends BaseController {
 */
   public function show($id)
   {
-    return $this->song->find($id);
+    $song = $this->song->find($id);
+
+    $phrases = Phrase::where('song_id', '=', $song->id)->get();
+    
+    return View::make('songs.show', compact('song'), compact('phrases'));
   }
 
   /**

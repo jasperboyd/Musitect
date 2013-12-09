@@ -19,10 +19,12 @@
   <p>{{ Form::label('primary_instrument', 'Primary Instrument:') }}
   {{ Form::text('primary_instrument') }}</p>
 
-  {{ Form::hidden('password', Auth::user()->password())}}
+  {{ Form::hidden('password', Auth::user()->password) }}
  
   <p>{{ Form::submit('Update Profile') }}</p>
  
 {{ Form::close() }}
+
+<!-- Change Password from Cribbb code using a PasswordController -->
 
 @stop

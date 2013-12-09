@@ -9,6 +9,9 @@
   </section> 
 
   <section id="editor"> 
+
+    <h1>Editor</h1> 
+
    @if($errors->any())
      <ul>
        {{ implode('', $errors->all('<li>:message</li>'))}}
@@ -30,6 +33,12 @@
 
    {{ Form::close() }}
 
+    <h2>Add a Phrase</h2> 
+
+    @include('phrases.create', array($song))
+
+    <h2>Edit existing Phrases</h2> 
+
     @foreach($phrases as $phrase)
       <p>
       @include('phrases.edit', [$phrase])
@@ -37,6 +46,6 @@
       </p>
     @endforeach
 
-    @include('phrases.create', array($song))
+    
   </section>
 @stop
