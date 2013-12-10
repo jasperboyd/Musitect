@@ -4,7 +4,8 @@ use Magniloquent\Magniloquent\Magniloquent;
 
 class Phrase extends Magniloquent {
 	
-	protected $fillable = array('phrase', 'chord');
+	protected $guarded = array('id');
+    protected $fillable = array('phrase', 'chord');
 	
 	/**
 	* Validation rules

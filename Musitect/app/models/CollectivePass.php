@@ -4,7 +4,8 @@ use Magniloquent\Magniloquent\Magniloquent;
 
 class CollectivePass extends Magniloquent {
 	
-	protected $fillable = array('user_id', 'collective_id', 'role');
+	protected $guarded = array('id');
+    protected $fillable = array('user_id', 'collective_id', 'role');
 	
 	/**
 	* Validation rules

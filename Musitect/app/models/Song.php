@@ -9,6 +9,7 @@ class Song extends Magniloquent {
 *
 * @var array
 */
+  protected $guarded = array('id');
   protected $fillable = array('title', 'tempo', 'key');
 
   /**
