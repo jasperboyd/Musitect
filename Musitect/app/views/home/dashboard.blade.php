@@ -22,8 +22,8 @@
 		<h3>Tempo: {{{$song->tempo}}}</h3> 
 		@endif
 		<p>
-		{{ link_to_action('SongController@show', 'preview', $song->id) }} |
-		{{ link_to_action('SongController@edit', 'edit', $song->id) }} | 
+		{{ link_to_route('song.show', 'preview', $song->id) }} |
+		{{ link_to_route('song.edit', 'edit', $song->id) }} | 
 		{{ link_to_route('song.showdestroy', 'destroy', $song->id) }}</p>
 	@endforeach
   </section>

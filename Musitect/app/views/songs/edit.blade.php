@@ -5,7 +5,13 @@
   <?php $phrases = Phrase::where('song_id', '=', $song->id)->get() ?>
 
   <section id="preview">
-    @include('songs.show', [$song])
+    <h1>Preview of {{$song->title}}</h1> 
+
+    @foreach($phrases as $phrase)
+    
+    @include('phrases.show')
+    
+    @endforeach
   </section> 
 
   <section id="editor"> 
@@ -39,7 +45,11 @@
 
     <h2>Edit existing Phrases</h2> 
 
-    @include('songs.partials.phraseloop')
+    @foreach($phrases as $phrase)
+    
+    @include('phrases.edit')
+    
+    @endforeach
     
   </section>
 @stop

@@ -14,7 +14,7 @@ class SongController extends BaseController {
 */
   public function __construct(Song $song)
   {
-     $this->beforeFilter('auth', array('except' => 'getLogin'));
+    $this->beforeFilter('auth', array('except' => 'getLogin'));
     $this->song = $song;
   }
 

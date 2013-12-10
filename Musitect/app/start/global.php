@@ -1,9 +1,24 @@
 <?php
 
-Event::listen('collective.store', function()
+/*
+Events
+*/ 
 
+//Makes a collective pass when the user creates a collective
+Event::listen('pass.make', function($collectiveid, $user)
 {
+    $collective = Collective::find($collectiveid);
     
+    //passes not saving?
+    $pass = new CollectivePass; 
+    $pass->user_id = $user->id; 
+    $pass->collective_id = $collective->collective_id;
+    $pass->role = 1;//defualt to admin
+    $pass->save(); 
+    
+
+    $collective->member_number = 1;//every group starts with one member
+    $collective->save(); 
 });
 
 /*

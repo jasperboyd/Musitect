@@ -49,8 +49,12 @@ class CollectiveController extends \BaseController {
 	{
 		$s = $this->collective->create(Input::all());
 
+		$user = Auth::user(); 
+
+
     if($s->isSaved())
     {
+      $event = Event::fire('pass.make', [$s->id, $user]);
       return Redirect::action('CollectiveController@show', $s->id)
         ->with('flash', 'A new phrase has been created!');
     }

@@ -6,11 +6,7 @@
 
   {{ Form::open(['url' => 'song/' . $song->id . '/phrases']) }} 
 
-  	<p>{{ Form::label('chord', 'Chord:') }}
-       {{ Form::text('chord') }}</p>
-
-  	<p>{{ Form::label('phrase', 'Phrase:') }}
-       {{ Form::text('phrase') }}</p>
+  	   @include('phrases.partials.form')
 
        {{ Form::hidden('song_id', $song->id)}}
 
