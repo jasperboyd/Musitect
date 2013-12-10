@@ -7,7 +7,7 @@
 	    
 	</p>
 
-	<?php $usercollectivepasses = CollectivePass::where('user_id', '=', Auth::user()->id)->get();?>
+	<?php $usercollectivepasses = CollectivePass::UserPasses()->get();?>
 	
 	@foreach($usercollectivepasses as $collectivepass)
 		<?php $collective = Collective::find($collectivepass->collective_id); ?>
@@ -15,21 +15,23 @@
 		<h3>Founded by {{{ $collective->founder }}}</h2>
 		<h3>Members: {{{ $collective->member_number}}}</h2>
 		<p>
-			{{ link_to_action('CollectiveController@show', 'show', $collective->id) }}
-			{{ link_to_action('CollectiveController@edit', 'edit', $collective->id) }}
+			{{ link_to_route('collectives.show', 'show', $collective->id) }}
+			{{ link_to_route('collectives.edit', 'edit', $collective->id) }}
 	        {{ link_to_route('collectives.destroy', 'destroy', $collective->id) }}
 	    </p>
 	@endforeach
 
 	<h1>Other Collectives</h1> 
 
-	<?php $othercollectivepasses = CollectivePass::where('user_id', '!=', Auth::user()->id)->get();?>
+	<?php $othercollectivepasses = CollectivePass::UserPasses()->get();?>
 	<!-- Parse out users groups --> 
 	@foreach($othercollectivepasses as $collectivepass)
+		@if(!$collectivepass->hasUser(Auth::user()->id));
 		<?php $collective = Collective::find($collectivepass->collective_id); ?>
 		<h2>{{{ $collective->name }}}</h1>
 		<h3>Founded by {{{ $collective->founder }}}</h2>
 		<h3>Members: {{{ $collective->member_number}}}</h2>
+		@endif
 	@endforeach
 
 @stop

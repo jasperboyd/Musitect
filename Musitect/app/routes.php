@@ -57,6 +57,18 @@ Collectives & CollectivePasses
 Route::resource('collectives', 'CollectiveController'); 
 Route::resource('collectivepasses', 'CollectivePassController');
 
+
+Collective::saved(function($collective){ 
+    
+    $pass = new CollectivePass; 
+    $pass->user_id = $collective->founder_id; 
+    $pass->collective_id = $collective->id;
+    $pass->role = 1;//founder defualts to admin
+    $pass->save(); 
+
+});
+
+
 /*
 Users
 */

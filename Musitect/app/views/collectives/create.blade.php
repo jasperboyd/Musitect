@@ -8,6 +8,10 @@
 
 	@include('collectives.partials.collectiveform')
 
+	{{ Form::hidden('founder_id', Auth::user()->id)}}
+
+	{{ Form::hidden('member_number', 1)}}
+
 	{{ Form::close() }}
 
 @stop

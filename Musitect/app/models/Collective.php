@@ -4,7 +4,7 @@ use Magniloquent\Magniloquent\Magniloquent;
 
 class Collective extends Magniloquent {
 	
-	protected $guarded = array('id');
+	protected $guarded = array('id', 'founder_id');
     protected $fillable = array('name', 'founder');
 	
 	/**
@@ -13,7 +13,9 @@ class Collective extends Magniloquent {
     public static $rules = array(
     	"save" => array(
      	   'name' => 'required',
-           'founder' => 'required'
+           'founder' => 'required',
+           'founder_id' => 'required',
+           'member_number' => 'required'
         ),
     	"create" => array(
             'name' => 'unique:collectives'
@@ -34,6 +36,7 @@ class Collective extends Magniloquent {
     */
     protected static $relationships = array(
         'users' => array('belongsToMany', 'User'),
-        'songs' => array('hasMany', 'Song')
+        'songs' => array('hasMany', 'Song'),
+        'passes' => array('hasMany', 'CollectivePass')
     );
 } 

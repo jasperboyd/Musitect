@@ -67,6 +67,6 @@ chmod -R o+w app/storage
 chmod -R o+w vendor/bin
 
 echo "--- Run Below to Start Database ---"
-echo "mysql -u root -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '' WITH GRANT OPTION; FLUSH PRIVILEGES;" -p"
-echo "mysql -u root -e "CREATE DATABASE testingground" -p"
+echo "mysql -u root -e 'GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '' WITH GRANT OPTION; FLUSH PRIVILEGES;' -p"
+echo "mysql -u root -e 'CREATE DATABASE testingground' -p"
 echo "--- All set to go! Would you like to play a game? ---"

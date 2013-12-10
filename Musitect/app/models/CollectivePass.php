@@ -4,6 +4,7 @@ use Magniloquent\Magniloquent\Magniloquent;
 
 class CollectivePass extends Magniloquent {
 	
+    protected $table = 'collective_passes';
 	protected $guarded = array('id');
     protected $fillable = array('user_id', 'collective_id', 'role');
 	
@@ -35,4 +36,12 @@ class CollectivePass extends Magniloquent {
         'collective' => array('belongsTo', 'Collective'),
         'user' => array('hasOne', 'User')
     );
+
+    public function scopeUserPasses($query){
+        return $query->where('user_id', '=', Auth::user()->id);
+    }
+
+    public function hasUser($userid){ 
+
+    }
 } 
