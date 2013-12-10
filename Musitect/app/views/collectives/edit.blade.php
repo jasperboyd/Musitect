@@ -8,6 +8,8 @@
 
 	@include('collectives.partials.collectiveform')
 
+	<p>{{ Form::submit('Change it!') }}</p>
+
 	{{ Form::close() }}
 
 @stop

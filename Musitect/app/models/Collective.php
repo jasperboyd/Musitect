@@ -4,8 +4,8 @@ use Magniloquent\Magniloquent\Magniloquent;
 
 class Collective extends Magniloquent {
 	
-	protected $guarded = array('id', 'founder_id');
-    protected $fillable = array('name', 'founder');
+	protected $guarded = array('id');
+    protected $fillable = array('name', 'founder', 'founder_id', 'member_number');
 	
 	/**
 	* Validation rules

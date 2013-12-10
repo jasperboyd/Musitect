@@ -12,6 +12,8 @@
 
 	{{ Form::hidden('member_number', 1)}}
 
+	<p>{{ Form::submit('Found it!') }}</p>
+
 	{{ Form::close() }}
 
 @stop

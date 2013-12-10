@@ -3,5 +3,3 @@
 
 <p>{{ Form::label('founder', 'Founder(s):') }}
        {{ Form::text('founder') }}</p>
-
-<p>{{ Form::submit('Found it!') }}</p>
