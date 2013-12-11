@@ -6,7 +6,8 @@ class UserController extends BaseController {
 
 	public function __construct(User $user)
 	{
- 		 $this->user = $user;
+ 		 $this->beforeFilter('auth', array('except' => 'getLogin'));
+     $this->user = $user;
 	}
 
 	  /**
@@ -16,7 +17,10 @@ class UserController extends BaseController {
 */
   public function index()
   {
-    return $this->user->all();
+    $users = $this->user->all();
+    $collectives = Auth::user()->collectives;
+
+    return View::make('users.index', compact('users', 'collectives'));
   }
 
   /**
@@ -72,7 +76,7 @@ class UserController extends BaseController {
   {
     $user = $this->user->find($id);
 
-    return View::make('users.edit')->with('user', $user);;
+    return View::make('users.edit', compact('user'));
   }
 
   /**

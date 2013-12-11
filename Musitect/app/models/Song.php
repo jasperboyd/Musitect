@@ -10,7 +10,7 @@ class Song extends Magniloquent {
 * @var array
 */
   protected $guarded = array('id');
-  protected $fillable = array('title', 'tempo', 'key');
+  protected $fillable = array('title', 'tempo', 'key', 'collective_id');
 
   /**
 * Validation rules
@@ -39,6 +39,7 @@ class Song extends Magniloquent {
 */
   protected static $relationships = array(
         'users' => array('belongsTo', 'User'),
+        'collective' => ['belongsTo', 'Collective'],
         'phrases' => array('hasMany', 'Phrase'),
     );
 }

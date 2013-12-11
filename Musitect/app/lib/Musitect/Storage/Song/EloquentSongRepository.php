@@ -1,6 +1,7 @@
 <?php namespace Musitect\Storage\Song;
 
 use Song;
+use Collective;
 
 class EloquentSongRepository implements SongRepository {
 
@@ -14,18 +15,25 @@ class EloquentSongRepository implements SongRepository {
     return Song::find($id);
   }
 
+  public function setCollective($collectiveid, $songid)
+  { 
+      $collective = Collective::find($collectiveid);
+      $song = $this->find($songid); 
+      
+      $song->collective()->associate($collective);
+      $collective->songs()->save($song);
+
+      return $song; 
+  }
+
   public function create($input)
   {
-    // Create new Song
     $song = new Song($input);
 
-    // Get the current user
     $user = \Auth::user();
 
-    // Save the post
     $user->songs()->save($song);
 
-    // Return the post
     return $song;
   }
 

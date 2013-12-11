@@ -6,6 +6,8 @@ interface SongRepository {
 
   public function find($id);
 
+  public function setCollective($collectiveid, $songid);
+
   public function create($input);
 
   public function update($input);

@@ -19,7 +19,13 @@ class EloquentCollectivePassRepository implements CollectivePassRepository {
     // Create new collectivepass
     $collectivepass = new CollectivePass($input); 
 
-    $collectivepass->save();
+    $collective = Collective::Find($collectivepass->collective_id);
+
+    $user = User::Find($collectivepass->user_id); 
+
+    $collective->passes()->save($collectivepass);
+
+    $collectivepass->user()->save($user); 
 
     return $collectivepass; 
   }

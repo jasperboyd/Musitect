@@ -4,11 +4,11 @@
     </ul>
   @endif
 
-  {{ Form::open(['url' => 'song/' . $song->id . '/phrases']) }} 
+  {{ Form::open(['route' => ['phrases.store', $song->id]]) }} 
 
   	   @include('phrases.partials.form')
 
-       {{ Form::hidden('song_id', $song->id)}}
+       {{ Form::hidden('song_id', $song->id) }}
 
     <p>{{ Form::submit('Add a phrase') }}</p>
 

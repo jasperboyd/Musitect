@@ -113,7 +113,8 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-		'Musitect\Storage\StorageServiceProvider'
+		'Musitect\Storage\StorageServiceProvider',
+		'Way\Generators\GeneratorsServiceProvider'
 
 	),
 

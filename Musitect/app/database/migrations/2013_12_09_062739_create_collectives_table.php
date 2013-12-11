@@ -17,7 +17,6 @@ class CreateCollectivesTable extends Migration {
 			$table->increments('id');
 			$table->string('name')->unique(); 
 			$table->string('founder'); 
-			$table->integer('founder_id');
 			$table->integer('member_number'); 
 			$table->timestamps();
 		});

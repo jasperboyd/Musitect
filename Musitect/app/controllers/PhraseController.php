@@ -1,7 +1,6 @@
 <?php
 
 use Musitect\Storage\Phrase\PhraseRepository as Phrase;
-use Musitect\Storage\Song\SongRepository as Song; 
 
 class PhraseController extends BaseController {
 
@@ -44,17 +43,17 @@ class PhraseController extends BaseController {
 *
 * @return Response
 */
-  public function store($song)
+  public function store($songid)
   {
-    $s = $this->phrase->create(Input::all(), $song);
+    $s = $this->phrase->create(Input::all(), $songid);
 
     if($s->isSaved())
     {
-      return Redirect::action('SongController@edit', $s->song_id)
+      return Redirect::action('SongController@edit', $songid)
         ->with('flash', 'A new phrase has been created!');
     }
 
-    return Redirect::action('SongController@edit', $song)
+    return Redirect::action('SongController@edit', $songid)
       ->withInput()
       ->withErrors($s->errors());
   }
@@ -89,17 +88,17 @@ class PhraseController extends BaseController {
 * @param int $id
 * @return Response
 */
-  public function update($songId, $id)
+  public function update($songid, $id)
   {
     $s = $this->phrase->update($id);
 
     if($s->isSaved())
     {
-      return Redirect::route('song.edit', $songId)
+      return Redirect::route('song.edit', $songid)
         ->with('flash', 'The phrase was updated');
     }
 
-    return Redirect::route('song.edit', $songId)
+    return Redirect::route('song.edit', $songid)
       ->withInput()
       ->withErrors($s->errors());
   }

@@ -5,7 +5,7 @@ use Magniloquent\Magniloquent\Magniloquent;
 class Collective extends Magniloquent {
 	
 	protected $guarded = array('id');
-    protected $fillable = array('name', 'founder', 'founder_id', 'member_number');
+    protected $fillable = array('name', 'founder', 'member_number');
 	
 	/**
 	* Validation rules
@@ -14,7 +14,6 @@ class Collective extends Magniloquent {
     	"save" => array(
      	   'name' => 'required',
            'founder' => 'required',
-           'founder_id' => 'required',
            'member_number' => 'required'
         ),
     	"create" => array(
@@ -35,8 +34,7 @@ class Collective extends Magniloquent {
     * User relationship
     */
     protected static $relationships = array(
-        'users' => array('belongsToMany', 'User'),
         'songs' => array('hasMany', 'Song'),
-        'passes' => array('hasMany', 'CollectivePass')
+        'users' => array('hasMany', 'User')
     );
 } 

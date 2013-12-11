@@ -1,6 +1,7 @@
 <?php
 
 use Musitect\Storage\Song\SongRepository as Song;
+use Musitect\Storage\Phrase\PhraseRepository as Phrase;
 
 class SongController extends BaseController {
 
@@ -25,7 +26,8 @@ class SongController extends BaseController {
 */
   public function index()
   {
-    return $this->song->all();
+    $songs = Auth::user()->songs; 
+    return View::make('songs.index', compact('songs'));
   }
 
   /**
@@ -64,10 +66,8 @@ class SongController extends BaseController {
 * @param int $id
 * @return Response
 */
-  public function show($id)
+  public function show($song)
   {
-    $song = $this->song->find($id);
-
     $phrases = Phrase::where('song_id', '=', $song->id)->get();
     
     return View::make('songs.show', compact('song'), compact('phrases'));
@@ -83,7 +83,19 @@ class SongController extends BaseController {
   {
     $song = $this->song->find($id);
 
-    return View::make('songs.edit', compact('song'));
+    $collectives = Auth::user()->collectives;
+
+    return View::make('songs.edit', compact('song', 'collectives'));
+  }
+
+  public function setCollective($collectiveid, $songid){
+     
+     $song = $this->song->setCollective($collectiveid, $songid); 
+
+     $collectives = Auth::user()->collectives;
+
+     return View::make('songs.edit', compact('song', 'collectives'));
+
   }
 
   /**

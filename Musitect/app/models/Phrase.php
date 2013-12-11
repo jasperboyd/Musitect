@@ -5,15 +5,13 @@ use Magniloquent\Magniloquent\Magniloquent;
 class Phrase extends Magniloquent {
 	
 	protected $guarded = array('id');
-    protected $fillable = array('phrase', 'chord');
+    protected $fillable = array('lyric', 'chord');
 	
 	/**
 	* Validation rules
 	*/
     public static $rules = array(
-    	"save" => array(
-     	   'song_id' => 'required|numeric'
-        ),
+    	"save" => array(),
     	"create" => array(),
     	"update" => array()
     );
@@ -22,7 +20,7 @@ class Phrase extends Magniloquent {
     * Factory
     */
     public static $factory = array(
-    	'phrase' => 'string',
+    	'lyric' => 'string',
         'chord' => 'string', 
     	'song_id' => 'factory|Song'
     );
@@ -32,5 +30,10 @@ class Phrase extends Magniloquent {
     */
     protected static $relationships = array(
         'songs' => array('belongsTo', 'Song'),
+        'user' => array('belongsTo', 'User')
     );
+
+    public function scopeSong($query, $songid){
+        return $query->where('song_id', '=', $songid);
+    }
 } 

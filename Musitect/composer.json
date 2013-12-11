@@ -12,7 +12,7 @@
 		"way/generators": "dev-master",
 		"zizaco/factory-muff": "dev-master",
 		"mockery/mockery": "dev-master"
-		},
+	},
 	"autoload": {
 		"classmap": [
 			"app/commands",

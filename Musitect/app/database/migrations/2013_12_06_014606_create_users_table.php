@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration {
 			$table->string('first_name')->nullable(); 
 			$table->string('last_name')->nullable(); 
 			$table->string('primary_instrument')->nullable(); 
+			$table->string('collective_id');
 			$table->string('password'); 
 			$table->timestamps();
 		});

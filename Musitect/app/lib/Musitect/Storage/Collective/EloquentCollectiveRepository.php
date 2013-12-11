@@ -1,6 +1,7 @@
 <?php namespace Musitect\Storage\Collective;
 
 use Collective;
+use User;
 
 class EloquentCollectiveRepository implements CollectiveRepository {
 
@@ -14,14 +15,37 @@ class EloquentCollectiveRepository implements CollectiveRepository {
     return Collective::find($id);
   }
 
-  public function create($input)
+  public function saveAll($collective, $user){
+    $collective->save(); 
+
+    $collective->users()->save($user); 
+
+    $user->collectives()->save($collective);
+
+    return $collective;
+  }
+
+  public function create($input, $userid)
   {
     // Create new collective
-    $collective = new Collective($input); 
+    $collective = new Collective($input);
 
-    $collective->save();
+    $user = User::Find($userid); 
 
-    return $collective; 
+    return $this->saveAll($collective, $user); 
+  }
+
+  public function addUser($collectiveid, $userid){ 
+      
+      $user = User::Find($userid); 
+      
+      $collective = $this->find($collectiveid);
+
+      $members = $collective->member_number; 
+
+      $collective->member_number = $members + 1; 
+
+      return $this->saveAll($collective, $user); 
   }
 
   public function update($id)

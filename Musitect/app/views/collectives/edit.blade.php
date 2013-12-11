@@ -2,7 +2,7 @@
 
 @section('content')
 
-	<h1>Edit Collective</h1> 
+	<h1>Edit Collective: {{$collective->name}}</h1> 
 
 	{{ Form::model($collective, ['route' => ['collectives.update', $collective->id], 'method'=>'PUT']) }}
 

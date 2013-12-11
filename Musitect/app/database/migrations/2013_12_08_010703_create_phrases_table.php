@@ -15,8 +15,9 @@ class CreatePhrasesTable extends Migration {
 		Schema::create('phrases', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('song_id');
-			$table->string('phrase')->nullable(); 
+			$table->integer('song_id')->nullable();
+			$table->integer('user_id')->nullable();
+			$table->string('lyric')->nullable(); 
 			$table->string('chord')->nullable();
 			$table->timestamps();
 		});

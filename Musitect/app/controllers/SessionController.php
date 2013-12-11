@@ -40,7 +40,7 @@ class SessionController extends BaseController {
   {
     Auth::logout();
  
-    return View::make('session.destroy');
+    return Redirect::action('HomeController@index');
   }
  
 }

@@ -41,13 +41,23 @@ class CollectiveController extends \BaseController {
 	}
 
 	/**
+	* Additional Tom-foolery
+	*/ 
+
+	public function addUser($collectiveid, $userid)
+	{
+		$this->collective->addUser($collectiveid, $userid);
+		return $this->show($collectiveid); 	
+	}
+
+	/**
 	 * Store a newly created resource in storage.
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store($userid)
 	{
-		$s = $this->collective->create(Input::all());
+		$s = $this->collective->create(Input::all(), $userid);
 
     if($s->isSaved())
     {
@@ -81,7 +91,7 @@ class CollectiveController extends \BaseController {
 	public function edit($id)
 	{
 		$collective = $this->collective->find($id);
-		View::make('collectives.edit', compact('collective'));
+		return View::make('collectives.edit', compact('collective'));
 	}
 
 	/**
@@ -96,7 +106,7 @@ class CollectiveController extends \BaseController {
 
     if($s->isSaved())
     {
-      return Redirect::route('collective.edit', $id)
+      return Redirect::route('collectives.edit', $id)
         ->with('flash', 'The phrase was updated');
     }
 
@@ -115,5 +125,6 @@ class CollectiveController extends \BaseController {
 	{
 		//
 	}
+
 
 }

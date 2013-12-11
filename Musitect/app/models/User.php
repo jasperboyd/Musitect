@@ -41,6 +41,8 @@ class User extends Magniloquent implements UserInterface, RemindableInterface {
 
 	protected static $relationships = array(
         'songs' => array('hasMany', 'Song'),
+        'phrases' => array('hasMany', 'Song'),
+        'collectives' => array('belongsToMany', 'Collective')
     );
 
 	/**
@@ -57,9 +59,7 @@ class User extends Magniloquent implements UserInterface, RemindableInterface {
     */
   	public function feed()
     {
-    	$id = $this->id;
-
-    	return Song::where('user_id', '=', $id)->get(); 
+    	return $this->songs; 
     }
 
 	/**

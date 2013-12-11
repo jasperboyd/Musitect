@@ -54,11 +54,24 @@ Route::get('logout', array(
 Collectives & CollectivePasses
 */
 
-Route::resource('collectives', 'CollectiveController'); 
-Route::resource('collectivepasses', 'CollectivePassController');
+//Add User Interface Function
+Route::get('user/{userid}/collectives/{collectiveid}', array(
+  'before' => 'auth',
+  'uses' => 'CollectiveController@addUser', 
+  'as' => 'collectives.user.add'
+));
+
+//Custom store function
+Route::post('user/{userid}/collective', array(
+  'before' => 'auth',
+  'uses' => 'CollectiveController@store', 
+  'as' => 'collectives.store'
+));
+
+Route::resource('collectives', 'CollectiveController',  array('except' => ['store'])); 
 
 
-Collective::saved(function($collective){ 
+/*Collective::saved(function($collective){ 
     
     $pass = new CollectivePass; 
     $pass->user_id = $collective->founder_id; 
@@ -66,7 +79,7 @@ Collective::saved(function($collective){
     $pass->role = 1;//founder defualts to admin
     $pass->save(); 
 
-});
+});*/
 
 
 /*
@@ -79,42 +92,53 @@ Route::resource('users', 'UserController');
 Songs
 */
 
-Route::resource('song', 'SongController'); 
+//Add Song Interface Function
+Route::get('collectives/{collectiveid}/song/{songid}', array(
+  'before' => 'auth',
+  'uses' => 'songController@setCollective', 
+  'as' => 'song.collective.set'
+));
 
+//Custom destroy function
 Route::get('song/{song}/destroy', array(
   'before' => 'auth', 
   'uses' => 'SongController@showDestroy',
   'as' => 'song.showdestroy'
 ));
 
+Route::resource('song', 'SongController'); 
+
 /*
 Phrases
 */
 
-Route::get('phrases/create', array(
+//Custom create function
+Route::get('song/{songid}/phrases', array(
   'before' => 'auth',
-  'uses' => 'PhraseController@create',
-  'as' => 'phrases.create'
-));
-
-Route::post('song/{song}/phrases', array(
-  'before' => 'auth',
-  'uses' => 'PhraseController@store',
+  'uses' => 'PhraseController@create', 
   'as' => 'phrases.store'
-)); 
-
-Route::delete('song/{song}/phrases/{phrases}', array(
+));
+//Custom store function
+Route::post('song/{songid}/phrases', array(
   'before' => 'auth',
-  'uses' => 'PhraseController@destroy', 
-  'as' => 'phrases.destroy'
+  'uses' => 'PhraseController@store', 
+  'as' => 'phrases.store'
 ));
 
-Route::put('song/{song}/phrases/{phrase}/edit', array(
-  'before' => 'auth', 
-  'uses' => 'PhraseController@update',
+//Custom edit function
+Route::get('phrases/{phrase}/edit', array(
+  'before' => 'auth',
+  'uses' => 'PhraseController@edit', 
+  'as' => 'phrases.edit'
+));
+
+Route::put('song/{songid}/edit/{phrase}', array(
+  'before' => 'auth',
+  'uses' => 'PhraseController@update', 
   'as' => 'phrases.update'
 ));
 
+Route::resource('phrases', 'PhraseController', array('except' => ['store', 'edit', 'create', 'update']));
 
 
 

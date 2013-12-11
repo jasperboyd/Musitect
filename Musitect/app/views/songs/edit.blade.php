@@ -2,6 +2,7 @@
 
   @section('content')
 
+  <?php //$phrases = $song->phrases; ?>
   <?php $phrases = Phrase::where('song_id', '=', $song->id)->get() ?>
 
   <section id="preview">
@@ -41,7 +42,7 @@
 
     <h2>Add a Phrase</h2> 
 
-    @include('phrases.create', array($song))
+    @include('phrases.create')
 
     <h2>Edit existing Phrases</h2> 
 
@@ -50,6 +51,14 @@
     @include('phrases.edit')
     
     @endforeach
-    
+
+    @if($song->collective_id == NULL)
+      <h2>Add to Collective</h2>
+    @else
+      <h2>Move song from {{Collective::find($song->collective_id)->name }}</h2>
+    @endif
+
+    @include('songs.addCollective')
+
   </section>
 @stop

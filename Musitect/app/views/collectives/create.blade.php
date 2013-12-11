@@ -4,11 +4,9 @@
 
 	<h1>Create Collective</h1> 
 
-	{{ Form::open(['route' => 'collectives.store']) }}
+	{{ Form::open(['route' => ['collectives.store', Auth::User()->id]]) }}
 
 	@include('collectives.partials.collectiveform')
-
-	{{ Form::hidden('founder_id', Auth::user()->id)}}
 
 	{{ Form::hidden('member_number', 1)}}
 

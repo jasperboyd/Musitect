@@ -1,6 +1,7 @@
 <?php namespace Musitect\Storage\Phrase;
 
 use Phrase;
+use Song;
 
 class EloquentPhraseRepository implements PhraseRepository {
 
@@ -16,12 +17,15 @@ class EloquentPhraseRepository implements PhraseRepository {
 
   public function create($input, $songid)
   {
-    // Create new phrase
     $phrase = new Phrase($input); 
 
-    $phrase->song_id = $songid;
+    $user = \Auth::user();
 
-    $phrase->save();
+    $song = Song::find($songid);
+
+    $user->phrases()->save($phrase);
+
+    $song->phrases()->save($phrase);
 
     return $phrase; 
   }

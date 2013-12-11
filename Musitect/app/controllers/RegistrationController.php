@@ -28,7 +28,7 @@ class RegistrationController extends BaseController {
  
     if($s->isSaved())
     {
-      return Redirect::route('users.index')
+      return Redirect::route('users.edit', $s->id)
         ->with('flash', 'The new user has been created');
     }
  
