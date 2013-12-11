@@ -1,0 +1,20 @@
+.dashboard, .song_library, .collective_list { 
+	max-width: 800px; 
+	margin: $mediumist auto 0;
+
+	h1 {text-align: center;}
+
+	p {text-align: center;}
+
+	h3 {margin: $smallest auto}
+
+	.song, .collective { 
+		margin: $medium auto;
+
+		h3 {font-size: $small;}
+	}
+}
+
+.collective_list {
+	text-align:center;
+}

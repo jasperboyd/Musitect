@@ -88,9 +88,9 @@ class PhraseController extends BaseController {
 * @param int $id
 * @return Response
 */
-  public function update($songid, $id)
+  public function update($songid, $phraseid)
   {
-    $s = $this->phrase->update($id);
+    $s = $this->phrase->update($phraseid);
 
     if($s->isSaved())
     {

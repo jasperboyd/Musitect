@@ -5,7 +5,7 @@ use Magniloquent\Magniloquent\Magniloquent;
 class Phrase extends Magniloquent {
 	
 	protected $guarded = array('id');
-    protected $fillable = array('lyric', 'chord');
+    protected $fillable = array('lyric', 'chord', 'song_id', 'user_id');
 	
 	/**
 	* Validation rules

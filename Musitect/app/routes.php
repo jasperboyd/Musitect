@@ -132,7 +132,7 @@ Route::get('phrases/{phrase}/edit', array(
   'as' => 'phrases.edit'
 ));
 
-Route::put('song/{songid}/edit/{phrase}', array(
+Route::any('song/{songid}/edit/{phraseid}', array(
   'before' => 'auth',
   'uses' => 'PhraseController@update', 
   'as' => 'phrases.update'

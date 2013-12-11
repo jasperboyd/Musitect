@@ -19,6 +19,7 @@
         <a href="{{ action('UserController@edit', Auth::User()->id) }}">Settings</a> 
     	<a href="{{ action('SessionController@destroy') }}">Logout</a> 
     </nav>
+    <hr>
     @endif
     
     @yield('content')

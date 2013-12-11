@@ -2,12 +2,17 @@
 
 @section('content')
 
-<article>
-<h1>Welcome to Musitect</h1>
-<h2>Are you a new user?</h2> 
+<article class="landing">
+<h1>Welcome to Musitect the online toolkit for songwriters.</h1>
+<section class="registration">
+<h2>New here?</h2>
 @include('registration.index')
+</section>
+<section class="login">
 <h2>Or an old friend?</h2> 
+<p>Login with you email and password</p>
 @include('session.create')
+</section>
 </article>
 
 @stop

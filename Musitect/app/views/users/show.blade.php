@@ -2,6 +2,7 @@
 
 @section('content')
 
+<article class="profile">
 @if($user->first_name != NULL)
 @if($user->last_name != NULL)
 <h1>{{{$user->first_name}}} {{{$user->last_name}}}</h1>
@@ -14,5 +15,7 @@
 @if($user->primary_instrument != NULL)
 <h2>Primarily plays {{{$user->primary_instrument}}}</h2> 
 @endif
+</article>
+
 	
 @stop

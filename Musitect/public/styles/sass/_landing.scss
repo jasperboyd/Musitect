@@ -1,0 +1,30 @@
+.landing { 
+	
+	text-align:center;
+
+	h1 {font-size: $mediumist; margin-top: $large;}
+
+	section{
+		margin: $large auto;
+		width: 50%;
+		float: left;
+		p {
+			margin: $smallest auto;
+		}
+	}
+
+	.registration { 
+		text-align: center;
+		p {
+		padding-right: $small;
+		}
+	}
+
+	.login { 
+		text-align: center;
+		p {
+		padding-left: $small;
+		}
+	}
+}
+

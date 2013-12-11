@@ -1,0 +1,17 @@
+.song_editor { 
+	text-align: center; 
+
+	p { 
+		margin: $small auto;
+	}
+
+	.editor {
+		section {width: 46%; float:left; margin: 1% 1% $large}
+		margin: $mediumist auto;
+		display: block;
+
+		.collective_add { 
+			width: 100%;
+		}
+	}
+}

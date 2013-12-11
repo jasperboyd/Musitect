@@ -1,0 +1,335 @@
+/* line 17, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 3, ../sass/_header.scss */
+header a {
+  margin: 0 auto;
+  display: block;
+}
+/* line 4, ../sass/_header.scss */
+header h1, header h2 {
+  text-align: center;
+}
+/* line 5, ../sass/_header.scss */
+header h1 {
+  font-size: 22px;
+  margin: 11px auto 0;
+}
+/* line 6, ../sass/_header.scss */
+header h2 {
+  font-size: 8.25px;
+  margin: 2.75px auto;
+  text-transform: uppercase;
+  letter-spacing: 2.75px;
+  font-weight: 700;
+}
+
+/* line 9, ../sass/_header.scss */
+nav {
+  text-align: center;
+  margin-top: 8.25px;
+}
+/* line 12, ../sass/_header.scss */
+nav a {
+  padding: 5.5px;
+  display: inline-block;
+  -webkit-border-radius: 5.5px 5.5px;
+  -moz-border-radius: 5.5px / 5.5px;
+  border-radius: 5.5px / 5.5px;
+}
+
+/* line 1, ../sass/_landing.scss */
+.landing {
+  text-align: center;
+}
+/* line 5, ../sass/_landing.scss */
+.landing h1 {
+  font-size: 33px;
+  margin-top: 38.5px;
+}
+/* line 7, ../sass/_landing.scss */
+.landing section {
+  margin: 38.5px auto;
+  width: 50%;
+  float: left;
+}
+/* line 11, ../sass/_landing.scss */
+.landing section p {
+  margin: 5.5px auto;
+}
+/* line 16, ../sass/_landing.scss */
+.landing .registration {
+  text-align: center;
+}
+/* line 18, ../sass/_landing.scss */
+.landing .registration p {
+  padding-right: 16.5px;
+}
+/* line 23, ../sass/_landing.scss */
+.landing .login {
+  text-align: center;
+}
+/* line 25, ../sass/_landing.scss */
+.landing .login p {
+  padding-left: 16.5px;
+}
+
+/* line 1, ../sass/_dash.scss */
+.dashboard, .song_library, .collective_list {
+  max-width: 800px;
+  margin: 33px auto 0;
+}
+/* line 5, ../sass/_dash.scss */
+.dashboard h1, .song_library h1, .collective_list h1 {
+  text-align: center;
+}
+/* line 7, ../sass/_dash.scss */
+.dashboard p, .song_library p, .collective_list p {
+  text-align: center;
+}
+/* line 9, ../sass/_dash.scss */
+.dashboard h3, .song_library h3, .collective_list h3 {
+  margin: 5.5px auto;
+}
+/* line 11, ../sass/_dash.scss */
+.dashboard .song, .dashboard .collective, .song_library .song, .song_library .collective, .collective_list .song, .collective_list .collective {
+  margin: 22px auto;
+}
+/* line 14, ../sass/_dash.scss */
+.dashboard .song h3, .dashboard .collective h3, .song_library .song h3, .song_library .collective h3, .collective_list .song h3, .collective_list .collective h3 {
+  font-size: 16.5px;
+}
+
+/* line 18, ../sass/_dash.scss */
+.collective_list {
+  text-align: center;
+}
+
+/* line 1, ../sass/_song_creator.scss */
+.song_creator {
+  text-align: center;
+}
+/* line 4, ../sass/_song_creator.scss */
+.song_creator h1 {
+  margin: 27.5px auto;
+}
+/* line 8, ../sass/_song_creator.scss */
+.song_creator p {
+  margin: 16.5px auto;
+}
+
+/* line 1, ../sass/_song_editor.scss */
+.song_editor {
+  text-align: center;
+}
+/* line 4, ../sass/_song_editor.scss */
+.song_editor p {
+  margin: 16.5px auto;
+}
+/* line 8, ../sass/_song_editor.scss */
+.song_editor .editor {
+  margin: 33px auto;
+  display: block;
+}
+/* line 9, ../sass/_song_editor.scss */
+.song_editor .editor section {
+  width: 46%;
+  float: left;
+  margin: 1% 1% 38.5px;
+}
+/* line 13, ../sass/_song_editor.scss */
+.song_editor .editor .collective_add {
+  width: 100%;
+}
+
+/* line 1, ../sass/_user_list.scss */
+.user_list {
+  text-align: center;
+  width: 80%;
+  margin: 38.5px auto;
+}
+/* line 6, ../sass/_user_list.scss */
+.user_list p {
+  margin: 11px auto;
+}
+
+/* line 1, ../sass/_user_profile.scss */
+.profile {
+  text-align: center;
+  margin: 66px;
+}
+
+/* line 1, ../sass/_footer.scss */
+footer {
+  width: 100%;
+  color: white;
+  height: 33px;
+  background: #00003f;
+  float: left;
+  text-align: center;
+  padding: 16.5px;
+}
+/* line 10, ../sass/_footer.scss */
+footer a {
+  color: #bfbfbf;
+  letter-spacing: 2.75px;
+}
+/* line 15, ../sass/_footer.scss */
+footer h5 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.75px;
+}
+/* line 21, ../sass/_footer.scss */
+footer h6 {
+  font-size: 11px;
+  margin: 5.5px auto;
+}
+
+/* line 1, ../sass/_global.scss */
+h1 {
+  font-size: 44px;
+}
+
+/* line 5, ../sass/_global.scss */
+h2 {
+  font-size: 38.5px;
+}
+
+/* line 9, ../sass/_global.scss */
+h3 {
+  font-size: 33px;
+}
+
+/* line 13, ../sass/_global.scss */
+h4 {
+  font-size: 27.5px;
+}
+
+/* line 17, ../sass/_global.scss */
+h5 {
+  font-size: 22px;
+}
+
+/* line 21, ../sass/_global.scss */
+h6, p {
+  font-size: 16.5px;
+}
+
+/* line 25, ../sass/_global.scss */
+p {
+  font-family: "Garamond", serif;
+}
+
+/* line 29, ../sass/_global.scss */
+a {
+  text-decoration: none;
+  color: #00003f;
+  padding: 2.75px;
+  text-transform: uppercase;
+  letter-spacing: 2.75px;
+  -webkit-border-radius: 5.5px 5.5px;
+  -moz-border-radius: 5.5px / 5.5px;
+  border-radius: 5.5px / 5.5px;
+}
+
+/* line 38, ../sass/_global.scss */
+a:hover {
+  background: #00003f;
+  color: white;
+}
+
+/* line 43, ../sass/_global.scss */
+.highlight {
+  font-weight: 700;
+}
+
+/* line 48, ../sass/_global.scss */
+.burn a {
+  color: #bf0000;
+}
+
+/* line 53, ../sass/_global.scss */
+.chord {
+  background: #00003f;
+  color: white;
+  padding: 5.5px;
+  font-family: "Futura", sans-serif;
+  font-weight: 700;
+}
+
+/* line 63, ../sass/_global.scss */
+.lyric {
+  font-style: italic;
+}
+
+/* line 70, ../sass/_global.scss */
+input {
+  border: none;
+  -webkit-box-shadow: #bf0000, 3px 3px 3px 10px;
+  -moz-box-shadow: #bf0000, 3px 3px 3px 10px;
+  box-shadow: #bf0000, 3px 3px 3px 10px;
+  font-size: 22px;
+}

@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <section class="content">
+  <article class="dashboard">
 
   	@if($user->first_name != NULL)
 	<h1>{{{$user->first_name}}}'s Dashboard</h1>
@@ -11,6 +11,7 @@
 	@endif
 
 	@foreach($songs as $song)
+	<section class="song">
 		<h2>{{{$song->title}}}</h2>
 		<h3>Created at {{{$song->created_at}}}</h3>
 		<h3>Updated at {{{$song->updated_at}}}</h3> 
@@ -21,12 +22,13 @@
 		@if($song->tempo != NULL)
 		<h3>Tempo: {{{$song->tempo}}}</h3> 
 		@endif
-		<p>
+		<p class="song_menu">
 		{{ link_to_route('song.show', 'preview', $song->id) }} |
 		{{ link_to_route('song.edit', 'edit', $song->id) }} | 
-		{{ link_to_route('song.showdestroy', 'burn', $song->id) }}</p>
+		<span class="burn">{{ link_to_route('song.showdestroy', 'burn', $song->id) }}</span></p>
+	</section>
 	@endforeach
-	
-  </section>
+
+  </article>
 
 @stop

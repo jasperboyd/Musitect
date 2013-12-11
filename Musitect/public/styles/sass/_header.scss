@@ -1,0 +1,13 @@
+header { 
+	
+	a { margin: 0 auto; display: block;}
+	h1, h2 { text-align:center; }
+	h1, { font-size: $medium; margin: $smaller auto 0;}
+	h2, { font-size: $smallest*1.5; margin: $smallest/2 auto; text-transform: uppercase; letter-spacing: $smallest/2; font-weight: 700;}
+}
+
+nav { 
+	text-align: center;
+	margin-top: $smallest*1.5;
+	a { padding: $smallest; display: inline-block; @include border-radius($smallest, $smallest)}
+}

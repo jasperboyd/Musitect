@@ -1,0 +1,47 @@
+$serif : 'Garamond';
+$sans_serif : 'Futura';
+
+$hugest : 66px;
+$huger : 60.5px;
+$huge : 55px;
+$largest : 49.5px; 
+$larger : 44px; 
+$large : 38.5px; 
+$mediumist : 33px; 
+$mediumer : 27.5px; 
+$medium : 22px; 
+$small : 16.5px; 
+$smaller : 11px; 
+$smallest : 5.5px; 
+
+$gray : shade(blue, 75); 
+$green : shade(green, 50);
+$burn : shade(red, 25); 
+
+@import "compass";
+
+@import "compass/reset";
+
+@import "header";
+
+@import "landing";
+
+@import "registration";
+@import "login";
+
+@import "dash";
+
+@import "collective_editor";
+@import "collective_list";
+
+@import "song_creator";
+@import "song_editor";
+@import "song_library";
+
+@import "user_list";
+@import "user_profile";
+@import "user_settings";
+
+@import "footer";
+
+@import "global";

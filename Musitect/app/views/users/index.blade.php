@@ -1,23 +1,29 @@
 @extends('layouts.master')
 
 @section('content')
+	
+	<article class="user_list"> 
 
 	<h1>The Musitects</h1>
 
 	<ul>
 	@foreach($users as $user)
-		<li>{{$user->username}}</li>
-		<ol>
-			<li>{{link_to_action('UserController@show', 'profile', $user->id)}}</li>
-			<li>Add to Collective:</li>
-			<ol>
+		<section class="user">
+		<p>
+			<span class="highlight">{{{$user->username}}}</span>
+			Profile: {{link_to_action('UserController@show', $user->username, $user->id)}}
+			Add to Collective:
+			
 				@foreach($collectives as $collective)
 
-				<li>{{link_to_route('collectives.user.add', $collective->name, [$collective->id, $user->id])}}</li>
+				{{link_to_route('collectives.user.add', $collective->name, [$collective->id, $user->id])}}
 				
 				@endforeach
-			</ol>
-		</ol>
+			
+		</p>
+		</section>
 	@endforeach
 	</ul>
+
+	</article>
 @stop

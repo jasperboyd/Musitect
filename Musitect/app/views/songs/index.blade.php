@@ -4,6 +4,7 @@
 
 	<?php $user = Auth::user(); ?>
 
+	<article class="song_library">
 	@if($user->first_name != NULL)
 	<h1>{{{$user->first_name}}}'s Song Library</h1>
 	@else 
@@ -12,6 +13,7 @@
 
 	@foreach($songs as $song)
 
+	<section class="song">
 		<h2>{{{$song->title}}}</h2>
 		<h3>Created at {{{$song->created_at}}}</h3>
 		<h3>Updated at {{{$song->updated_at}}}</h3> 
@@ -22,11 +24,13 @@
 		@if($song->tempo != NULL)
 		<h3>Tempo: {{{$song->tempo}}}</h3> 
 		@endif
-		<p>
+		<p class="song_menu">
 		{{ link_to_route('song.show', 'preview', $song->id) }} |
 		{{ link_to_route('song.edit', 'edit', $song->id) }} | 
-		{{ link_to_route('song.showdestroy', 'burn', $song->id) }}</p>
+		<span class="burn">{{ link_to_route('song.showdestroy', 'burn', $song->id) }}</span></p>
+	</section>
 
 	@endforeach
+</article>
 
 @stop

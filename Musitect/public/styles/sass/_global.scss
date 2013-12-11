@@ -1,0 +1,74 @@
+h1 {
+	font-size: $larger;
+}
+
+h2 { 
+	font-size: $large;
+}
+
+h3 {
+	font-size: $mediumist;
+}
+
+h4 { 
+	font-size: $mediumer;
+}
+
+h5 { 
+	font-size: $medium;
+}
+
+h6, p { 
+	font-size: $small;
+}
+
+p { 
+	font-family: $serif, serif;
+}
+
+a { 
+	text-decoration: none; 
+	color: $gray;
+	padding: $smallest/2;
+	text-transform: uppercase;
+	letter-spacing: $smallest/2;
+	@include border-radius($smallest, $smallest);
+}
+
+a:hover { 
+	background: $gray;
+	color: white;
+}
+
+.highlight { 
+	font-weight: 700;
+}
+
+.burn { 
+	a {
+	color: $burn;
+	}
+} 
+
+	.chord { 
+		 
+			background: $gray;
+			color: white;
+			padding: $smallest; 
+			font-family: $sans_serif, sans-serif; 
+			font-weight: 700;
+		
+	}
+
+	.lyric { 
+
+			font-style: italic; 
+
+	}
+
+
+input { 
+		border: none; 
+		@include box-shadow($burn, 3px 3px 3px 10px);
+		font-size: $medium;
+}
