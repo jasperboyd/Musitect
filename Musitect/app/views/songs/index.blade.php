@@ -2,6 +2,14 @@
 
 @section('content')
 
+	<?php $user = Auth::user(); ?>
+
+	@if($user->first_name != NULL)
+	<h1>{{{$user->first_name}}}'s Song Library</h1>
+	@else 
+	<h1>{{{$user->username}}}'s Song Library</h1>
+	@endif
+
 	@foreach($songs as $song)
 
 		<h2>{{{$song->title}}}</h2>

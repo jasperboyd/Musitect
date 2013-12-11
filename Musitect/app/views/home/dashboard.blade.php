@@ -3,10 +3,11 @@
 @section('content')
 
   <section class="content">
-	@if($user->first_name != NULL)
-	<h1>{{{$user->first_name}}}'s Song Library</h1>
+
+  	@if($user->first_name != NULL)
+	<h1>{{{$user->first_name}}}'s Dashboard</h1>
 	@else 
-	<h1>{{{$user->username}}}'s Song Library</h1>
+	<h1>{{{$user->username}}}'s Dashboard</h1>
 	@endif
 
 	@foreach($songs as $song)
@@ -25,6 +26,7 @@
 		{{ link_to_route('song.edit', 'edit', $song->id) }} | 
 		{{ link_to_route('song.showdestroy', 'burn', $song->id) }}</p>
 	@endforeach
+	
   </section>
 
 @stop
