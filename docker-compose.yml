@@ -1,0 +1,50 @@
+version: '3'
+networks:
+    frontend:
+        driver: bridge
+    backend:
+        driver: bridge
+volumes:
+    mariadb:
+        driver: local 
+services:
+    php:
+        build: ./php/
+        tty: true
+        volumes: 
+            - ./laravel:/var/www/app/
+        depends_on:
+            - mariadb 
+        networks:
+            - backend
+    nginx:
+        build: ./nginx/
+        volumes:
+            - ./Musitect:/var/www/app
+            - ./Musitect/dev.env:/var/www/app/.env
+            - ./nginx/log:/var/log/nginx
+            - ./nginx/sites:/etc/nginx/sites-available
+            - ./nginx/ssl:/etc/nginx/ssl
+        ports:
+            - 80:80
+            - 443:443
+        depends_on:
+            - mariadb 
+        networks:
+            - backend
+            - frontend
+    mariadb:
+        build: ./mariadb
+        tty: true
+        volumes:
+            - ~/.freshwax/data:/var/lib/mysql
+            - ./mariadb/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d 
+        ports:
+            - 3306:3306
+        environment:
+            - MYSQL_DATABASE=default
+            - MYSQL_USER=default
+            - MYSQL_PASSWORD=homestead 
+            - MYSQL_ROOT_PASSWORD=secret 
+        networks:
+            - backend
