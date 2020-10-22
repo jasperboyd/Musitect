@@ -4,14 +4,10 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.0.*",
-		"magniloquent/magniloquent": "dev-master"
+		"laravel/framework": "v4.*"
 	},
 	"require-dev": { 
-		"phpunit/phpunit": "3.7.27", 
-		"way/generators": "dev-master",
-		"zizaco/factory-muff": "dev-master",
-		"mockery/mockery": "dev-master"
+
 	},
 	"autoload": {
 		"classmap": [
