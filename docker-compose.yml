@@ -17,6 +17,17 @@ services:
             - mariadb 
         networks:
             - backend
+    php-fpm:
+        build: ./php-fpm/
+        volumes:
+            - ./php-fpm/php.ini:/usr/local/etc/php/php.ini
+            - ./laravel:/var/www/app/
+        depends_on:
+            - mariadb 
+        expose:
+            - 9000
+        networks:
+            - backend 
     nginx:
         build: ./nginx/
         volumes:
